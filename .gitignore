@@ -1,0 +1,11 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Planning docs (not for the demo repo)
+AI駆動開発完全版.md
+AI駆動開発 完全ガイド.md
