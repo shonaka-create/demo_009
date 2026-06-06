@@ -333,6 +333,22 @@ ul  { list-style: none; }
   line-height: 1.1;
   margin-bottom: 28px;
 }
+.hero__lead {
+  font-family: var(--ff-body);
+  font-size: clamp(13px, 1.6vw, 16px);
+  color: rgba(255,255,255,.65);
+  line-height: 1.9;
+  letter-spacing: .04em;
+  margin-bottom: 24px;
+  max-width: 520px;
+  padding-left: 14px;
+  border-left: 2px solid var(--red);
+}
+.hero__lead strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
 .hero__meta {
   display: flex;
   flex-wrap: wrap;
@@ -405,7 +421,7 @@ ul  { list-style: none; }
 .about__heading {
   font-family: var(--ff-display);
   font-size: clamp(64px, 9vw, 110px);
-  line-height: .95;
+  line-height: 1.1;
   letter-spacing: .02em;
   margin-bottom: 24px;
 }
@@ -652,7 +668,7 @@ ul  { list-style: none; }
 .entry-cta__title {
   font-family: var(--ff-display);
   font-size: clamp(80px, 11vw, 148px);
-  line-height: .88;
+  line-height: 1.05;
   letter-spacing: .02em;
   color: var(--yellow);
   text-shadow: 4px 4px 0 rgba(0,0,0,.6);
@@ -810,7 +826,7 @@ ul  { list-style: none; }
 .page-hero__title {
   font-family: var(--ff-display);
   font-size: clamp(72px, 10vw, 140px);
-  line-height: .9;
+  line-height: 1.1;
   letter-spacing: .02em;
   color: var(--white);
 }
@@ -879,7 +895,7 @@ ul  { list-style: none; }
 .apply__title {
   font-family: var(--ff-display);
   font-size: clamp(60px, 9vw, 110px);
-  line-height: .9;
+  line-height: 1.1;
   color: var(--white);
   margin-bottom: 20px;
 }
