@@ -119,7 +119,7 @@ ul  { list-style: none; }
 /* ── Section Header ── */
 .sec-label {
   font-family: var(--ff-sub);
-  font-size: clamp(12px, 1.1vw, 15px);
+  font-size: clamp(14px, 1.1vw, 15px);
   letter-spacing: .25em;
   text-transform: uppercase;
   color: var(--gray-lt);
