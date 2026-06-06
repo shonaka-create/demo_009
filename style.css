@@ -225,22 +225,61 @@ ul  { list-style: none; }
 }
 
 @media (max-width: 800px) {
-  .nav { overflow: visible; }
+  /* backdrop-filter を外すことで Safari の fixed 子要素バグを回避 */
+  .nav { backdrop-filter: none; background: #0A0A0A; }
+
   .nav__burger { display: flex; }
-  .nav__menu {
-    display: none;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    min-height: calc(100vh - var(--nav-h));
-    background: #0A0A0A;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
+  .nav__burger[aria-expanded="true"] span:nth-child(1) {
+    transform: rotate(45deg) translate(4.5px, 4.5px);
   }
-  .nav__menu.open { display: flex; }
-  .nav__menu a { font-size: 20px !important; }
-  .nav__entry { padding: 12px 28px !important; font-size: 14px !important; }
+  .nav__burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav__burger[aria-expanded="true"] span:nth-child(3) {
+    transform: rotate(-45deg) translate(4.5px, -4.5px);
+  }
+
+  /* 右サイドドロワー */
+  .nav__menu {
+    display: flex;
+    position: fixed;
+    top: 0; right: 0;
+    width: min(280px, 78vw);
+    height: 100vh;
+    background: #111111;
+    border-left: 1px solid rgba(255,255,255,.1);
+    padding: 72px 32px 48px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+    transform: translateX(110%);
+    transition: transform .28s cubic-bezier(.4,0,.2,1);
+    z-index: 1001;
+    pointer-events: none;
+    overflow-y: auto;
+  }
+  .nav__menu.open {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  .nav__menu a {
+    font-size: 17px !important;
+    width: 100%;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    color: rgba(255,255,255,.7) !important;
+    letter-spacing: .1em;
+  }
+  .nav__menu li:first-child a { border-top: 1px solid rgba(255,255,255,.07); }
+  .nav__entry {
+    display: block !important;
+    margin-top: 28px;
+    padding: 13px 0 !important;
+    font-size: 13px !important;
+    width: 100% !important;
+    text-align: center;
+    border-top: none !important;
+    border-bottom: none !important;
+  }
 }
 
 /* ── Hero ── */
