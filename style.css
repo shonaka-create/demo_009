@@ -242,11 +242,11 @@ ul  { list-style: none; }
     display: flex;
     position: fixed;
     top: 0; right: 0;
-    width: min(280px, 78vw);
+    width: min(300px, 82vw);
     height: 100vh;
     background: #111111;
     border-left: 1px solid rgba(255,255,255,.1);
-    padding: 72px 32px 48px;
+    padding: 72px 36px 56px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -261,19 +261,47 @@ ul  { list-style: none; }
     transform: translateX(0);
     pointer-events: auto;
   }
-  .nav__menu a {
-    font-size: 17px !important;
-    width: 100%;
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(255,255,255,.07);
-    color: rgba(255,255,255,.7) !important;
-    letter-spacing: .1em;
+
+  /* ✕ 閉じるボタン */
+  .nav__close-li {
+    display: block;
+    position: absolute;
+    top: 18px; right: 18px;
+    border-bottom: none !important;
+    border-top: none !important;
+    width: auto !important;
+    padding: 0 !important;
   }
-  .nav__menu li:first-child a { border-top: 1px solid rgba(255,255,255,.07); }
+  .nav__close {
+    background: none;
+    border: 1px solid rgba(255,255,255,.2);
+    color: rgba(255,255,255,.6);
+    font-size: 16px;
+    width: 36px; height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: color var(--ease), border-color var(--ease);
+  }
+  .nav__close:hover { color: var(--white); border-color: rgba(255,255,255,.5); }
+
+  .nav__menu a {
+    font-size: 18px !important;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    color: rgba(255,255,255,.65) !important;
+    letter-spacing: .08em;
+  }
+  .nav__menu li:not(.nav__close-li):first-of-type a {
+    border-top: 1px solid rgba(255,255,255,.07);
+  }
   .nav__entry {
     display: block !important;
-    margin-top: 28px;
-    padding: 13px 0 !important;
+    margin-top: 32px;
+    padding: 14px 0 !important;
     font-size: 13px !important;
     width: 100% !important;
     text-align: center;
@@ -281,6 +309,9 @@ ul  { list-style: none; }
     border-bottom: none !important;
   }
 }
+
+/* desktop では閉じるボタン非表示 */
+.nav__close-li { display: none; }
 
 /* ── Hero ── */
 .hero {
