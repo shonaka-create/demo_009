@@ -225,12 +225,14 @@ ul  { list-style: none; }
 }
 
 @media (max-width: 800px) {
+  .nav { overflow: visible; }
   .nav__burger { display: flex; }
   .nav__menu {
     display: none;
-    position: fixed;
-    top: var(--nav-h); left: 0; right: 0; bottom: 0;
-    background: var(--bg);
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    min-height: calc(100vh - var(--nav-h));
+    background: #0A0A0A;
     flex-direction: column;
     align-items: center;
     justify-content: center;
