@@ -51,7 +51,7 @@ body::after {
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: .032;
+  opacity: .055;
   pointer-events: none;
   z-index: 9999;
 }
@@ -343,6 +343,81 @@ ul  { list-style: none; }
     rgba(0,0,0,.5) 60%,
     rgba(0,0,0,.92) 100%
   );
+}
+
+/* ── Character stickers (TMCキャラ) ── */
+.sticker-char {
+  position: absolute;
+  z-index: 10;
+  border: 3px solid rgba(255,255,255,.88);
+  box-shadow: 3px 4px 14px rgba(0,0,0,.6), 1px 1px 0 rgba(0,0,0,.3);
+  border-radius: 3px;
+  pointer-events: none;
+  user-select: none;
+}
+/* Hero: SINCEステッカーの下に重なる */
+.sticker-char--hero {
+  top: calc(var(--nav-h) + 88px);
+  right: clamp(14px, 4vw, 46px);
+  width: 60px;
+  transform: rotate(-6deg);
+  opacity: .86;
+}
+/* About: 画像グリッド右下 */
+.about__visual { position: relative; }
+.sticker-char--about {
+  width: 54px;
+  bottom: 30px;
+  right: -6px;
+  transform: rotate(8deg);
+  opacity: .83;
+}
+/* Vendors: ヘッダー右上 */
+.vendors__head { position: relative; }
+.sticker-char--vendors {
+  width: 48px;
+  top: 4px;
+  right: 4px;
+  transform: rotate(-3deg);
+  opacity: .78;
+}
+/* Footer organizer */
+.footer__organizer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.footer__org-char {
+  width: 40px;
+  border: 2px solid rgba(255,255,255,.45);
+  border-radius: 2px;
+  transform: rotate(3deg);
+  opacity: .7;
+  flex-shrink: 0;
+}
+.footer__org-label {
+  font-family: var(--ff-sub);
+  font-size: 10px;
+  letter-spacing: .14em;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+.footer__org-name {
+  font-family: var(--ff-body);
+  font-size: 12px;
+  color: var(--gray-lt);
+  margin-top: 3px;
+}
+/* Page hero (vendors.html) sticker */
+.sticker-char--page-hero {
+  width: 52px;
+  top: calc(var(--nav-h) + 30px);
+  right: clamp(16px, 5vw, 60px);
+  transform: rotate(5deg);
+  opacity: .82;
 }
 
 /* Corner stickers */
