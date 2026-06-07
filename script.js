@@ -84,9 +84,28 @@
   if (nav) {
     window.addEventListener('scroll', function () {
       nav.style.borderBottomColor = window.scrollY > 40
-        ? 'rgba(255,255,255,.12)'
-        : 'rgba(255,255,255,.06)';
+        ? 'rgba(255,95,160,.35)'
+        : 'rgba(255,95,160,.18)';
     }, { passive: true });
+  }
+
+  // ── DIG characters — dig-up reveal on scroll ──────────
+  var digItems = document.querySelectorAll('[data-dig]');
+  if ('IntersectionObserver' in window && digItems.length) {
+    var digIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          // small delay so user "sees" the dig happening
+          setTimeout(function () {
+            e.target.classList.add('dug');
+          }, 300);
+          digIO.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    digItems.forEach(function (el) { digIO.observe(el); });
+  } else {
+    digItems.forEach(function (el) { el.classList.add('dug'); });
   }
 
 })();
