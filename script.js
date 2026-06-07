@@ -89,6 +89,48 @@
     }, { passive: true });
   }
 
+  // ── Gallery slider ────────────────────────────────────
+  var slider   = document.getElementById('gallery-slider');
+  var dotsWrap = document.getElementById('gallery-dots');
+  var prevBtn  = document.querySelector('.gallery__btn--prev');
+  var nextBtn  = document.querySelector('.gallery__btn--next');
+
+  if (slider && dotsWrap) {
+    var slides     = slider.querySelectorAll('.gallery__slide');
+    var slideCount = slides.length;
+    var dots       = [];
+    var current    = 0;
+
+    // Create dots
+    for (var i = 0; i < slideCount; i++) {
+      (function(idx) {
+        var dot = document.createElement('button');
+        dot.className = 'gallery__dot' + (idx === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', (idx + 1) + ' 枚目');
+        dot.addEventListener('click', function() { goTo(idx); });
+        dotsWrap.appendChild(dot);
+        dots.push(dot);
+      })(i);
+    }
+
+    function goTo(idx) {
+      current = Math.max(0, Math.min(idx, slideCount - 1));
+      var slideW = slides[0].offsetWidth + 10; // width + gap
+      slider.scrollTo({ left: slideW * current, behavior: 'smooth' });
+      dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function() { goTo(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { goTo(current + 1); });
+
+    // Update dot on native scroll
+    slider.addEventListener('scroll', function() {
+      var slideW = slides[0].offsetWidth + 10;
+      var idx = Math.round(slider.scrollLeft / slideW);
+      if (idx !== current) { current = idx; dots.forEach(function(d, i) { d.classList.toggle('active', i === current); }); }
+    }, { passive: true });
+  }
+
   // ── DIG characters — dig-up reveal on scroll ──────────
   var digItems = document.querySelectorAll('[data-dig]');
   if ('IntersectionObserver' in window && digItems.length) {

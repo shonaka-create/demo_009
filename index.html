@@ -50,17 +50,38 @@
   ===================================================== -->
   <section class="hero" id="top" aria-label="トップビジュアル">
 
-    <!-- Virtual world sky background -->
+    <!-- Virtual world digital space background -->
     <div class="hero__sky" aria-hidden="true"></div>
 
-    <!-- TMC character avatar -->
-    <div class="hero__chara" aria-hidden="true">
-      <div class="hero__chara-badge">TMC キャラクター ✦</div>
-      <img src="TMCキャラ_01.jpg" alt="TMC キャラクター" class="hero__chara-img">
-      <span class="hero__sparkle">✦</span>
-      <span class="hero__sparkle">★</span>
-      <span class="hero__sparkle">♥</span>
-      <span class="hero__sparkle">✿</span>
+    <!-- Right side: OZ virtual portal + DIG elements -->
+    <div class="hero__portal-zone" aria-hidden="true">
+
+      <!-- Floating DIG! neon labels -->
+      <div class="hero__dig-float">DIG!</div>
+      <div class="hero__dig-float">✦ STASH</div>
+      <div class="hero__dig-float">→ DIG →</div>
+      <div class="hero__dig-float">✿ 掘れ</div>
+
+      <!-- Virtual HUD coordinate -->
+      <div class="hero__hud-coord">
+        <span>OZ : X240 · Y180</span>
+        <span>ONLINE ●</span>
+      </div>
+
+      <!-- Avatar portal with spinning rings -->
+      <div class="hero__portal">
+        <div class="hero__portal-ring"></div>
+        <div class="hero__portal-ring"></div>
+        <div class="hero__portal-ring"></div>
+        <div class="hero__portal-inner">
+          <div class="hero__chara-badge">TMC キャラクター ✦</div>
+          <img src="TMCキャラ_01.jpg" alt="TMC キャラクター" class="hero__chara-img">
+          <span class="hero__sparkle">✦</span>
+          <span class="hero__sparkle">★</span>
+          <span class="hero__sparkle">✿</span>
+        </div>
+      </div>
+
     </div>
 
     <!-- Content -->
@@ -487,24 +508,31 @@
 
 
   <!-- =====================================================
-       GALLERY
+       GALLERY — Horizontal Slider
   ===================================================== -->
-  <section class="section" id="gallery" aria-label="ギャラリー" style="padding-top:0;">
-    <div style="margin-bottom:16px;" class="wrap">
+  <section class="gallery-section section" id="gallery" aria-label="ギャラリー" style="padding-top:0; padding-bottom:0;">
+    <div class="wrap" style="margin-bottom:16px;">
       <p class="sec-label">— GALLERY</p>
     </div>
-    <div class="gallery__grid">
-      <div class="ph g-item g-item--2x2"><span class="ph__text">イベント写真<br>差し込み予定</span></div>
-      <div class="ph g-item"><span class="ph__text">画像挿入予定</span></div>
-      <div class="ph g-item"><span class="ph__text">画像挿入予定</span></div>
-      <div class="ph g-item g-item--2x1"><span class="ph__text">受領資料を差し込み予定（横長）</span></div>
-      <div class="ph g-item"><span class="ph__text">画像挿入予定</span></div>
-      <div class="ph g-item"><span class="ph__text">画像挿入予定</span></div>
-      <div class="ph g-item g-item--3x1"><span class="ph__text">受領資料を差し込み予定（ワイド）</span></div>
-      <div class="ph g-item"><span class="ph__text">画像挿入予定</span></div>
-      <div class="ph g-item"><span class="ph__text">画像挿入予定</span></div>
-      <div class="ph g-item"><span class="ph__text">画像挿入予定</span></div>
+
+    <div class="gallery__slider-wrap">
+      <div class="gallery__slider" id="gallery-slider">
+        <div class="ph gallery__slide"><span class="ph__text">イベント写真 1<br>差し込み予定</span></div>
+        <div class="ph gallery__slide"><span class="ph__text">イベント写真 2<br>差し込み予定</span></div>
+        <div class="ph gallery__slide"><span class="ph__text">イベント写真 3<br>差し込み予定</span></div>
+        <div class="ph gallery__slide"><span class="ph__text">イベント写真 4<br>差し込み予定</span></div>
+        <div class="ph gallery__slide"><span class="ph__text">イベント写真 5<br>差し込み予定</span></div>
+        <div class="ph gallery__slide"><span class="ph__text">イベント写真 6<br>差し込み予定</span></div>
+        <div class="ph gallery__slide"><span class="ph__text">イベント写真 7<br>差し込み予定</span></div>
+        <div class="ph gallery__slide"><span class="ph__text">イベント写真 8<br>差し込み予定</span></div>
+        <div class="ph gallery__slide"><span class="ph__text">イベント写真 9<br>差し込み予定</span></div>
+        <div class="ph gallery__slide"><span class="ph__text">イベント写真 10<br>差し込み予定</span></div>
+      </div>
+      <button class="gallery__btn gallery__btn--prev" aria-label="前のスライド">‹</button>
+      <button class="gallery__btn gallery__btn--next" aria-label="次のスライド">›</button>
     </div>
+
+    <div class="gallery__dots" id="gallery-dots" aria-label="スライド番号"></div>
   </section>
 
 
