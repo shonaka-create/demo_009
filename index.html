@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://stashdig.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700&family=M+PLUS+Rounded+1c:wght@400;700;800;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -49,34 +49,18 @@
        HERO
   ===================================================== -->
   <section class="hero" id="top" aria-label="トップビジュアル">
-    <!-- BG image -->
-    <div class="hero__bg">
-      <div class="ph hero__bg-ph">
-        <span class="ph__text">KEY VISUAL — 受領資料を差し込み予定<br>（イベント会場 / フライヤービジュアル等）</span>
-      </div>
-      <div class="hero__overlay"></div>
-    </div>
 
-    <!-- Ghost watermark -->
-    <div class="sticker sticker--ghost" aria-hidden="true">DIG.</div>
+    <!-- Virtual world sky background -->
+    <div class="hero__sky" aria-hidden="true"></div>
 
-    <!-- TMC avatar — ZEPETO floating character (transparent PNG) -->
-    <div class="hero__chara">
-      <img src="TMCキャラ_01.png" alt="TMC キャラクター" class="hero__chara-img">
-      <span class="hero__chara-sparkle" aria-hidden="true">✦</span>
-      <span class="hero__chara-sparkle" aria-hidden="true">✦</span>
-      <span class="hero__chara-sparkle" aria-hidden="true">★</span>
-    </div>
-
-    <!-- Sticker cluster (hidden TMC character among stickers) -->
-    <div class="sticker-zone" aria-hidden="true">
-      <div class="stk stk--since">SINCE<br>2025</div>
-      <div class="stk stk--date">SEP<br>22·23</div>
-      <div class="stk stk--place">TAMA<br>CTR</div>
-      <div class="stk stk--west">WEST<br>TOKYO</div>
-      <div class="stk stk--free">FREE<br>ENTRY</div>
-      <img class="stk stk--chara" src="TMCキャラ_01.png" alt="" width="72" loading="lazy">
-      <div class="stk stk--tag">STASH</div>
+    <!-- TMC character avatar -->
+    <div class="hero__chara" aria-hidden="true">
+      <div class="hero__chara-badge">TMC キャラクター ✦</div>
+      <img src="TMCキャラ_01.jpg" alt="TMC キャラクター" class="hero__chara-img">
+      <span class="hero__sparkle">✦</span>
+      <span class="hero__sparkle">★</span>
+      <span class="hero__sparkle">♥</span>
+      <span class="hero__sparkle">✿</span>
     </div>
 
     <!-- Content -->
@@ -88,7 +72,10 @@
       </div>
 
       <h1 class="hero__title reveal">STASH</h1>
-      <p class="hero__sub reveal">DON'T STOP<br>DIGGIN'</p>
+
+      <div class="hero__sub-bubble reveal">
+        <p class="hero__sub">DON'T STOP<br>DIGGIN'</p>
+      </div>
 
       <p class="hero__lead reveal">
         都内各地から<strong>個性的な古着屋</strong>が多摩センターに集結。<br>
@@ -115,7 +102,7 @@
         </div>
       </div>
 
-      <a href="#about" class="btn btn--outline">詳しく見る ↓</a>
+      <a href="#about" class="btn btn--pink reveal">詳しく見る ↓</a>
     </div>
 
     <div class="hero__scroll" aria-hidden="true"></div>
@@ -208,7 +195,7 @@
           </div>
           <div class="tape-stripe"></div>
           <div class="about__chara-wrap" aria-hidden="true">
-            <img src="TMCキャラ_01.png" alt="" class="about__chara-float">
+            <img src="TMCキャラ_01.jpg" alt="" class="about__chara-float">
           </div>
         </div>
 
