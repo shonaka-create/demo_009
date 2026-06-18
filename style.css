@@ -806,6 +806,42 @@ a   { color: inherit; text-decoration: none; }
   overflow: hidden; transition: opacity .2s;
 }
 .insta__post:hover { opacity: .80; }
+
+/* INSTAGRAM — follow pitch copy */
+.insta__lead {
+  font-family: var(--ff-round); font-size: 17px; font-weight: 700;
+  color: var(--text); line-height: 1.9; max-width: 720px; margin-top: -12px;
+}
+.insta__lead strong { color: var(--white); }
+.insta__points {
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px 28px; margin-top: 32px; max-width: 760px;
+}
+.insta__point {
+  display: flex; gap: 14px; align-items: baseline;
+  padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.insta__point-no {
+  font-family: var(--ff-title); font-size: 22px; color: var(--orange);
+  letter-spacing: .04em; line-height: 1; flex-shrink: 0;
+}
+.insta__point-txt { display: flex; flex-direction: column; gap: 3px; }
+.insta__point-txt > strong {
+  font-family: var(--ff-round); font-size: 15px; font-weight: 800; color: var(--white);
+}
+.insta__point-txt small {
+  font-size: 12.5px; color: var(--text-mid); font-family: var(--ff-body); line-height: 1.55;
+}
+.insta__point-txt small strong { color: var(--orange); font-weight: 700; }
+.insta__note {
+  font-family: var(--ff-sub); font-size: 14px; font-weight: 700; letter-spacing: .04em;
+  color: var(--text-mid); margin-top: 14px;
+}
+@media (max-width: 700px) {
+  .insta__points { grid-template-columns: 1fr; }
+  .insta__lead { font-size: 15.5px; }
+}
+
 @media (max-width: 600px) { .insta__grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* =========================================================
@@ -1148,6 +1184,117 @@ a   { color: inherit; text-decoration: none; }
 @keyframes dw-pop { 0% { transform: scale(1); } 42% { transform: scale(1.13); } 100% { transform: scale(1); } }
 
 /* =========================================================
+   DIG MAP (DD) — どこを掘る。choose-a-zone, not a list
+   ========================================================= */
+.dig-map__lead { color: var(--text); font-size: 15px; line-height: 1.9; margin: 0 0 24px; max-width: 640px; }
+
+.dig-map__legend { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 22px; }
+.dmleg { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--text-mid); font-family: var(--ff-round); font-weight: 700; }
+.dmleg__dot { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+.dmleg__dot--open   { background: #8BBF50; }
+.dmleg__dot--soon   { background: var(--yellow); }
+.dmleg__dot--locked { background: transparent; border: 1px dashed rgba(255,255,255,.4); border-radius: 3px; }
+
+/* the map — dig plots arranged like a site grid */
+.dig-map__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  padding: 16px; border-radius: var(--radius-lg);
+  background:
+    repeating-linear-gradient(0deg,   transparent 0 39px, rgba(255,255,255,.035) 39px 40px),
+    repeating-linear-gradient(90deg,  transparent 0 39px, rgba(255,255,255,.035) 39px 40px),
+    #0A0908;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: inset 0 0 80px rgba(0,0,0,.5);
+}
+
+.dm-plot {
+  position: relative; aspect-ratio: 1; border: 0; padding: 0; cursor: pointer; background: transparent;
+  perspective: 800px; font-family: var(--ff-sub);
+}
+.dm-rot-a { transform: rotate(-1.5deg); }
+.dm-rot-b { transform: rotate(1.5deg); }
+.dm-rot-c { transform: rotate(-0.6deg); }
+
+.dm-plot__face, .dm-plot__dug {
+  position: absolute; inset: 0; border-radius: 7px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  padding: 10px 8px; gap: 4px; line-height: 1.15;
+  box-shadow: 2px 3px 0 rgba(0,0,0,.4); transition: transform .5s ease, opacity .4s ease;
+}
+
+/* front (the plot you choose) */
+.dm-plot__face {
+  z-index: 2; transform-origin: top center;
+  background: #16130F; color: var(--white);
+  border: 1px solid rgba(255,255,255,.12); border-top: 3px solid var(--dm, #8BBF50);
+}
+.dm-plot__no  { font-family: var(--ff-sub); font-weight: 700; font-size: 10px; letter-spacing: .14em; color: var(--text-mid); }
+.dm-plot__cat { font-family: var(--ff-title); font-size: clamp(15px, 3.6vw, 23px); letter-spacing: .03em; color: var(--dm, var(--white)); line-height: .95; }
+.dm-plot__jp  { font-family: var(--ff-round); font-weight: 700; font-size: clamp(10px, 2.3vw, 12px); color: var(--text); }
+.dm-plot__dig {
+  margin-top: 4px; font-family: var(--ff-sub); font-weight: 900; letter-spacing: .12em;
+  font-size: 10.5px; color: #14110E; background: var(--dm, #8BBF50);
+  padding: 2px 10px; border-radius: 100px;
+}
+
+/* back (what's dug up) */
+.dm-plot__dug {
+  z-index: 1; opacity: 0; background: #14110E; color: var(--white);
+  border: 1px solid var(--dm, rgba(255,255,255,.2));
+}
+.dm-plot__zone { font-family: var(--ff-sub); font-weight: 900; letter-spacing: .08em; font-size: clamp(11px, 2.6vw, 14px); color: var(--dm, var(--white)); text-transform: uppercase; }
+.dm-plot__txt  { font-family: var(--ff-round); font-weight: 700; font-size: clamp(9.5px, 2.1vw, 11.5px); color: var(--text); line-height: 1.5; }
+.dm-plot__status {
+  margin-top: 3px; font-family: var(--ff-round); font-weight: 800; font-size: 9.5px; letter-spacing: .02em;
+  color: var(--dm, var(--yellow)); border: 1px solid currentColor; border-radius: 100px; padding: 2px 9px; opacity: .9;
+}
+
+/* dug state — peel the plot open */
+.dm-plot.dug .dm-plot__face { transform: rotateX(-90deg) translateY(-12%); opacity: 0; }
+.dm-plot.dug .dm-plot__dug  { opacity: 1; }
+.dm-plot.just-dug { animation: dw-pop .5s ease; }
+
+/* soon — taped, amber */
+.dm-plot[data-dm="soon"] .dm-plot__face { border-top-color: var(--yellow); }
+.dm-plot[data-dm="soon"] .dm-plot__dig { background: var(--yellow); }
+.dm-plot[data-dm="soon"] .dm-plot__dug { --dm: var(--yellow); border-color: var(--yellow-bdr); }
+
+/* locked — undecided, hatched */
+.dm-plot[data-dm="locked"] .dm-plot__face {
+  background:
+    repeating-linear-gradient(-45deg, transparent 0 8px, rgba(255,255,255,.04) 8px 9px),
+    #100E0C;
+  border: 1px dashed rgba(255,255,255,.22); border-top: 1px dashed rgba(255,255,255,.22);
+  color: var(--text-mid);
+}
+.dm-plot[data-dm="locked"] .dm-plot__cat { color: var(--text-mid); }
+.dm-plot[data-dm="locked"] .dm-plot__dig { background: transparent; color: var(--text-mid); border: 1px dashed rgba(255,255,255,.3); }
+.dm-plot[data-dm="locked"] .dm-plot__dug { --dm: var(--text-mid); border: 1px dashed rgba(255,255,255,.22); }
+.dm-plot[data-dm="locked"] .dm-plot__status { opacity: .7; }
+
+.dig-map__hint { margin: 22px 0 0; font-size: 12.5px; line-height: 1.9; color: var(--text-mid); }
+.dig-map__hint strong { color: var(--yellow); font-weight: 800; }
+
+/* revisit meter — the come-back-again hook */
+.dig-map__meter {
+  margin-top: 28px; padding: 22px 24px; border-radius: var(--radius-lg);
+  border: 1px solid rgba(139,191,80,.28); background: rgba(139,191,80,.05);
+}
+.dm-meter__head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.dm-meter__label { font-family: var(--ff-sub); font-weight: 900; letter-spacing: .1em; text-transform: uppercase; font-size: 13px; color: #8BBF50; }
+.dm-meter__count { font-family: var(--ff-round); font-weight: 700; font-size: 13px; color: var(--text); }
+.dm-meter__count b { font-family: var(--ff-title); font-size: 22px; color: var(--white); margin-right: 2px; }
+.dm-meter__bar { height: 8px; border-radius: 100px; background: rgba(255,255,255,.07); overflow: hidden; }
+.dm-meter__bar span { display: block; height: 100%; border-radius: 100px; background: linear-gradient(90deg, #8BBF50, var(--yellow)); }
+.dm-meter__note { margin-top: 12px; font-size: 12.5px; line-height: 1.8; color: var(--text-mid); }
+.dm-meter__note a { color: var(--orange); text-decoration: underline; }
+.dm-meter__note strong { color: var(--white); font-weight: 800; }
+
+@media (max-width: 560px) {
+  .dig-map__grid { grid-template-columns: repeat(2, 1fr); padding: 12px; gap: 10px; }
+}
+
+/* =========================================================
    FOUND TREASURES (EE) — coming
    ========================================================= */
 .found.section { background: #0B0A09; }
@@ -1174,11 +1321,11 @@ a   { color: inherit; text-decoration: none; }
   display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 18px 22px;
   border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02);
 }
-.archive__no { font-family: var(--ff-title); font-size: 30px; letter-spacing: .04em; color: var(--white); min-width: 104px; }
-.archive__meta { color: var(--text); font-size: 13px; flex: 1; min-width: 120px; }
+.archive__no { font-family: var(--ff-title); font-size: 40px; letter-spacing: .04em; color: var(--white); min-width: 124px; }
+.archive__meta { color: var(--text); font-size: 16px; flex: 1; min-width: 120px; }
 .archive__tag {
-  font-family: var(--ff-sub); font-weight: 900; font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-  padding: 5px 12px; border-radius: 50px;
+  font-family: var(--ff-sub); font-weight: 900; font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+  padding: 6px 15px; border-radius: 50px;
 }
 .archive__vol--now { border-color: rgba(240,192,0,.4); }
 .archive__vol--now .archive__no { color: var(--yellow); }

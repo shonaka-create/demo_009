@@ -320,27 +320,176 @@
   <!-- =====================================================
        DIG MAP (DD) — どこを掘るか
   ===================================================== -->
-  <section class="section" id="vendors" aria-label="出店者">
+  <section class="section dig-map" id="vendors" aria-label="DIG MAP — どこを掘る">
     <div class="wrap">
       <div class="vendors__head">
         <div>
           <p class="sec-label reveal">— DIG MAP</p>
           <h2 class="sec-title reveal" style="margin-bottom:0;">どこを掘る？</h2>
         </div>
-        <p class="vendors__sub reveal">都内各地から<br>個性的な古着屋が集結。</p>
+        <p class="vendors__sub reveal">一覧から探すんじゃない。<br>掘る場所を、選べ。</p>
       </div>
 
-      <div class="lineup-coming reveal">
-        <span class="lineup-coming__tape">COMING SOON</span>
-        <p class="lineup-coming__lead">出店者ラインナップは、<br>開催に向けて順次解禁。</p>
-        <p class="lineup-coming__sub">
-          都内各地から集まる個性的な古着屋を、ひと組ずつ公開していきます。<br>
-          壁が埋まっていく様子も、STASH の楽しみ方のひとつ。
-        </p>
-        <p class="lineup-coming__note">
-          解禁情報は Instagram
+      <p class="dig-map__lead reveal">
+        STASH の会場は、ジャンルごとの “発掘ゾーン” でできている。<br>
+        気になるエリアを掘ってみて——何が眠っているか、覗いてみよう。
+      </p>
+
+      <!-- legend -->
+      <div class="dig-map__legend reveal">
+        <span class="dmleg"><i class="dmleg__dot dmleg__dot--open"></i>掘れる</span>
+        <span class="dmleg"><i class="dmleg__dot dmleg__dot--soon"></i>解禁待ち</span>
+        <span class="dmleg"><i class="dmleg__dot dmleg__dot--locked"></i>未定ゾーン</span>
+      </div>
+
+      <!-- the map -->
+      <div class="dig-map__grid reveal" id="dig-map" aria-label="発掘ゾーン マップ">
+
+        <button class="dm-plot dm-rot-a" type="button" data-dm="open" style="--dm:#FF3C00;">
+          <span class="dm-plot__face">
+            <span class="dm-plot__no">A-01</span>
+            <span class="dm-plot__cat">VINTAGE</span>
+            <span class="dm-plot__jp">年代物・一点もの</span>
+            <span class="dm-plot__dig">DIG ▸</span>
+          </span>
+          <span class="dm-plot__dug">
+            <span class="dm-plot__zone">VINTAGE ZONE</span>
+            <span class="dm-plot__txt">70s〜90s の一点ものが<br>眠っている予定のエリア。</span>
+            <span class="dm-plot__status">出店者は順次解禁</span>
+          </span>
+        </button>
+
+        <button class="dm-plot dm-rot-b" type="button" data-dm="open" style="--dm:#4A8A3A;">
+          <span class="dm-plot__face">
+            <span class="dm-plot__no">A-02</span>
+            <span class="dm-plot__cat">MILITARY</span>
+            <span class="dm-plot__jp">ミリタリー・ワーク</span>
+            <span class="dm-plot__dig">DIG ▸</span>
+          </span>
+          <span class="dm-plot__dug">
+            <span class="dm-plot__zone">MILITARY ZONE</span>
+            <span class="dm-plot__txt">実物・レプリカ・ワーク系。<br>タフな一着を掘り当てろ。</span>
+            <span class="dm-plot__status">出店者は順次解禁</span>
+          </span>
+        </button>
+
+        <button class="dm-plot dm-rot-c" type="button" data-dm="open" style="--dm:#00A8CC;">
+          <span class="dm-plot__face">
+            <span class="dm-plot__no">B-01</span>
+            <span class="dm-plot__cat">DENIM</span>
+            <span class="dm-plot__jp">デニム・ジーンズ</span>
+            <span class="dm-plot__dig">DIG ▸</span>
+          </span>
+          <span class="dm-plot__dug">
+            <span class="dm-plot__zone">DENIM ZONE</span>
+            <span class="dm-plot__txt">ヴィンテージデニムから<br>古着ジーンズまで。</span>
+            <span class="dm-plot__status">出店者は順次解禁</span>
+          </span>
+        </button>
+
+        <button class="dm-plot dm-rot-b" type="button" data-dm="open" style="--dm:#CC2060;">
+          <span class="dm-plot__face">
+            <span class="dm-plot__no">B-02</span>
+            <span class="dm-plot__cat">BAND / ROCK</span>
+            <span class="dm-plot__jp">バンドT・ロックT</span>
+            <span class="dm-plot__dig">DIG ▸</span>
+          </span>
+          <span class="dm-plot__dug">
+            <span class="dm-plot__zone">BAND ZONE</span>
+            <span class="dm-plot__txt">バンT、ムービーT、<br>プリントものが集まる予定。</span>
+            <span class="dm-plot__status">出店者は順次解禁</span>
+          </span>
+        </button>
+
+        <button class="dm-plot dm-rot-a" type="button" data-dm="open" style="--dm:#F0C000;">
+          <span class="dm-plot__face">
+            <span class="dm-plot__no">C-01</span>
+            <span class="dm-plot__cat">SPORTS</span>
+            <span class="dm-plot__jp">スポーツ・スウェット</span>
+            <span class="dm-plot__dig">DIG ▸</span>
+          </span>
+          <span class="dm-plot__dug">
+            <span class="dm-plot__zone">SPORTS ZONE</span>
+            <span class="dm-plot__txt">カレッジ、スウェット、<br>ジャージ系のDIGスポット。</span>
+            <span class="dm-plot__status">出店者は順次解禁</span>
+          </span>
+        </button>
+
+        <button class="dm-plot dm-rot-c" type="button" data-dm="open" style="--dm:#8A6ACA;">
+          <span class="dm-plot__face">
+            <span class="dm-plot__no">C-02</span>
+            <span class="dm-plot__cat">SMALL / 雑貨</span>
+            <span class="dm-plot__jp">小物・アクセ・雑貨</span>
+            <span class="dm-plot__dig">DIG ▸</span>
+          </span>
+          <span class="dm-plot__dug">
+            <span class="dm-plot__zone">SMALL GOODS</span>
+            <span class="dm-plot__txt">バッグ、帽子、アクセ。<br>差し色になる小物たち。</span>
+            <span class="dm-plot__status">出店者は順次解禁</span>
+          </span>
+        </button>
+
+        <button class="dm-plot dm-rot-b" type="button" data-dm="soon" style="--dm:#2BB3AD;">
+          <span class="dm-plot__face">
+            <span class="dm-plot__no">D-01</span>
+            <span class="dm-plot__cat">RECORD / ZINE</span>
+            <span class="dm-plot__jp">レコード・カルチャー</span>
+            <span class="dm-plot__dig">調整中</span>
+          </span>
+          <span class="dm-plot__dug">
+            <span class="dm-plot__zone">まだ掘れない</span>
+            <span class="dm-plot__txt">レコードやZINEのゾーンは<br>現在 調整中。やるかも。</span>
+            <span class="dm-plot__status">解禁をお楽しみに</span>
+          </span>
+        </button>
+
+        <button class="dm-plot dm-rot-a" type="button" data-dm="locked">
+          <span class="dm-plot__face">
+            <span class="dm-plot__no">？-？？</span>
+            <span class="dm-plot__cat">？？？</span>
+            <span class="dm-plot__jp">未定ゾーン</span>
+            <span class="dm-plot__dig">LOCKED</span>
+          </span>
+          <span class="dm-plot__dug">
+            <span class="dm-plot__zone">COMING</span>
+            <span class="dm-plot__txt">場所もジャンルも、これから。<br>次に来たとき、増えてるかも。</span>
+            <span class="dm-plot__status">？？？</span>
+          </span>
+        </button>
+
+        <button class="dm-plot dm-rot-c" type="button" data-dm="locked">
+          <span class="dm-plot__face">
+            <span class="dm-plot__no">？-？？</span>
+            <span class="dm-plot__cat">？？？</span>
+            <span class="dm-plot__jp">未定ゾーン</span>
+            <span class="dm-plot__dig">LOCKED</span>
+          </span>
+          <span class="dm-plot__dug">
+            <span class="dm-plot__zone">COMING</span>
+            <span class="dm-plot__txt">フード？ DJ？ ワークショップ？<br>仕込み中の何かが入る場所。</span>
+            <span class="dm-plot__status">？？？</span>
+          </span>
+        </button>
+
+      </div>
+
+      <p class="dig-map__hint reveal">
+        ※ エリア分け・区画はすべて <strong>仮</strong> です。出店者が決まり次第、<br>
+        各ゾーンに実際のショップ名・カテゴリーが入っていきます。
+      </p>
+
+      <!-- revisit meter -->
+      <div class="dig-map__meter reveal">
+        <div class="dm-meter__head">
+          <span class="dm-meter__label">ZONE 解禁メーター</span>
+          <span class="dm-meter__count"><b>6</b> / 約40組（予定）</span>
+        </div>
+        <div class="dm-meter__bar" aria-hidden="true"><span style="width:15%;"></span></div>
+        <p class="dm-meter__note">
+          訪れるたびに、掘れる場所が増えていく。<br>
+          次の解禁は Instagram
           <a href="https://instagram.com/stashdig" target="_blank" rel="noopener">@stashdig</a>
-          でお知らせします。
+          でお知らせします。<strong>また掘りに来て。</strong>
         </p>
       </div>
 

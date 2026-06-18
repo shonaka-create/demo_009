@@ -212,4 +212,22 @@
     renderPass();
   })();
 
+  // ── DIG MAP ───────────────────────────────────────────
+  // Choose a zone and "dig" it open. Pure UI — independent of STASH PASS.
+  (function digMap() {
+    var map = document.getElementById('dig-map');
+    if (!map) return;
+
+    map.querySelectorAll('.dm-plot').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var dug = el.classList.toggle('dug');
+        if (dug) {
+          el.classList.remove('just-dug');
+          void el.offsetWidth; // reflow to restart animation
+          el.classList.add('just-dug');
+        }
+      });
+    });
+  })();
+
 })();
