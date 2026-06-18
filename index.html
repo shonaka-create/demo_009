@@ -32,9 +32,10 @@
         <li class="nav__close-li">
           <button class="nav__close" id="nav-close" aria-label="メニューを閉じる">✕</button>
         </li>
-        <li><a href="#about">概要</a></li>
+        <li><a href="#about">WHY</a></li>
         <li><a href="#info">開催情報</a></li>
-        <li><a href="#vendors">出店者</a></li>
+        <li><a href="#digwall">DIG WALL</a></li>
+        <li><a href="#vendors">DIG MAP</a></li>
         <li><a href="#access">アクセス</a></li>
         <li><a href="#instagram">Instagram</a></li>
         <li>
@@ -145,7 +146,7 @@
 
         <!-- Text -->
         <div class="about__text">
-          <p class="sec-label reveal">— CONCEPT</p>
+          <p class="sec-label reveal">— WHY STASH</p>
           <h2 class="about__heading reveal">
             古着を、<br><span class="about__heading-accent">掘れ。</span>
           </h2>
@@ -261,14 +262,72 @@
 
 
   <!-- =====================================================
-       VENDORS
+       DIG WALL (CC) — the dig-up wall
+  ===================================================== -->
+  <section class="dig-wall section" id="digwall" aria-label="DIG WALL">
+    <div class="wrap">
+      <p class="sec-label reveal">— DIG WALL</p>
+      <h2 class="sec-title reveal">掘れ、この壁を。</h2>
+      <p class="dig-wall__lead reveal">
+        ステッカー、貼り紙、落書き。めくって、押して、見つける。<br>
+        この壁には <strong>3つの“お宝”</strong> が隠れている。気付いた人だけが、少し嬉しい。
+      </p>
+
+      <div class="dw-board reveal" id="dw-board" aria-label="掘れる壁">
+        <button class="dw-item dw-rot-a" data-dw="peel" type="button" aria-label="めくる">
+          <span class="dw-front" style="background:#2BB3AD;color:#0c2b29;">DIG?</span>
+          <span class="dw-back">HIDE &amp; SEEK</span>
+        </button>
+        <button class="dw-item dw-rot-b" data-dw="treasure" data-id="t1" type="button" aria-label="めくってみる">
+          <span class="dw-front" style="background:#FF7BAA;color:#3a0d22;">PEEL ME</span>
+          <span class="dw-back dw-back--treasure">★<br>STASH PASS</span>
+        </button>
+        <button class="dw-item dw-rot-c" data-dw="press" type="button" aria-label="押す">
+          <span class="dw-front" style="background:#FF3C00;color:#fff;">PUSH</span>
+          <span class="dw-back" style="background:#14110E;color:#FF3C00;">STAMPED!</span>
+        </button>
+        <button class="dw-item dw-rot-b" data-dw="peel" type="button" aria-label="めくる">
+          <span class="dw-front" style="background:#E4FF54;color:#2b3a00;">90s</span>
+          <span class="dw-back">VINTAGE ONLY</span>
+        </button>
+        <button class="dw-item dw-rot-a" data-dw="treasure" data-id="t2" type="button" aria-label="めくってみる">
+          <span class="dw-front" style="background:#C9BBA0;color:#2b2317;">？？</span>
+          <span class="dw-back dw-back--treasure">★<br>STASH PASS</span>
+        </button>
+        <button class="dw-item dw-rot-c" data-dw="peel" type="button" aria-label="めくる">
+          <span class="dw-front" style="background:#BFE3F0;color:#1B5E6E;">DON'T STOP</span>
+          <span class="dw-back">DIGGIN'</span>
+        </button>
+        <button class="dw-item dw-rot-b" data-dw="peel" type="button" aria-label="めくる">
+          <span class="dw-front" style="background:#F0C000;color:#3a2e00;">掘れ</span>
+          <span class="dw-back">GOOD DIG!</span>
+        </button>
+        <button class="dw-item dw-rot-a" data-dw="treasure" data-id="t3" type="button" aria-label="ポスターの裏を見る">
+          <span class="dw-front" style="background:#1f1c17;color:#6b645b;border:1px dashed rgba(255,255,255,.22);">POSTER</span>
+          <span class="dw-back dw-back--chara">٩(◕‿◕)۶<br>FOUND ME!</span>
+        </button>
+        <button class="dw-item dw-rot-c" data-dw="peel" type="button" aria-label="めくる">
+          <span class="dw-front" style="background:#5A3A9A;color:#fff;">VIBE</span>
+          <span class="dw-back">CHECK</span>
+        </button>
+      </div>
+
+      <p class="dig-wall__circuit reveal" aria-hidden="true">
+        <span>WEBで掘る</span><i>→</i><span>お宝を発見</span><i>→</i><span>STASH PASS獲得</span><i>→</i><span>会場で実物と引換</span><i>→</i><span>またWEBへ</span>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       DIG MAP (DD) — どこを掘るか
   ===================================================== -->
   <section class="section" id="vendors" aria-label="出店者">
     <div class="wrap">
       <div class="vendors__head">
         <div>
-          <p class="sec-label reveal">— VENDORS</p>
-          <h2 class="sec-title reveal" style="margin-bottom:0;">出店者</h2>
+          <p class="sec-label reveal">— DIG MAP</p>
+          <h2 class="sec-title reveal" style="margin-bottom:0;">どこを掘る？</h2>
         </div>
         <p class="vendors__sub reveal">都内各地から<br>個性的な古着屋が集結。</p>
       </div>
@@ -301,7 +360,31 @@
 
 
   <!-- =====================================================
-       ACCESS
+       FOUND TREASURES (EE) — coming
+  ===================================================== -->
+  <section class="found section" id="found" aria-label="FOUND TREASURES">
+    <div class="wrap">
+      <p class="sec-label reveal">— FOUND TREASURES</p>
+      <h2 class="sec-title reveal">見つけた、を残す。</h2>
+      <p class="found__lead reveal">
+        来場者が掘り当てた一着、スナップ、戦利品。<br>
+        VOL.01 のあと、ここがカルチャーの記録で埋まっていきます。
+      </p>
+      <div class="found__grid reveal" aria-hidden="true">
+        <span class="found__cell">YOUR<br>TREASURE</span>
+        <span class="found__cell found__cell--alt">#STASHDIG</span>
+        <span class="found__cell">COMING<br>AFTER VOL.01</span>
+        <span class="found__cell found__cell--alt">SNAP</span>
+      </div>
+      <p class="found__note reveal">
+        当日の戦利品は <strong>#STASHDIG</strong> を付けて投稿を。ここに飾られるかも。
+      </p>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       ACCESS (FF)
   ===================================================== -->
   <section class="section" id="access" aria-label="アクセス">
     <div class="wrap">
@@ -374,15 +457,15 @@
 
 
   <!-- =====================================================
-       ENTRY CTA
+       JOIN STASH (GG)
   ===================================================== -->
-  <section class="entry-cta section" id="entry" aria-label="出店者募集">
+  <section class="entry-cta section" id="entry" aria-label="JOIN STASH">
     <div class="wrap">
       <div class="entry-cta__inner">
 
         <!-- Text -->
         <div>
-          <p class="sec-label sec-label--lt reveal">— VENDOR ENTRY</p>
+          <p class="sec-label sec-label--lt reveal">— JOIN STASH</p>
           <h2 class="entry-cta__title reveal">出店者<br>募集中</h2>
           <p class="entry-cta__eng reveal">WE ARE LOOKING FOR<br>VINTAGE VENDORS</p>
           <p class="entry-cta__body reveal">
@@ -426,6 +509,35 @@
           @stashdig をフォロー →
         </a>
       </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       ARCHIVE (II) — VOL.01〜 積み上げ
+  ===================================================== -->
+  <section class="archive section" id="archive" aria-label="ARCHIVE">
+    <div class="wrap">
+      <p class="sec-label reveal">— ARCHIVE</p>
+      <h2 class="sec-title reveal">積み上げていく。</h2>
+      <p class="archive__lead reveal">STASH は一度きりのイベントではなく、VOL を重ねて育つブランドです。</p>
+      <ol class="archive__list reveal">
+        <li class="archive__vol archive__vol--now">
+          <span class="archive__no">VOL.01</span>
+          <span class="archive__meta">2026.9.22 – 9.23 ／ 多摩センター</span>
+          <span class="archive__tag">NOW DIGGING</span>
+        </li>
+        <li class="archive__vol archive__vol--next">
+          <span class="archive__no">VOL.02</span>
+          <span class="archive__meta">COMING</span>
+          <span class="archive__tag">？？？</span>
+        </li>
+        <li class="archive__vol archive__vol--next">
+          <span class="archive__no">VOL.03</span>
+          <span class="archive__meta">COMING</span>
+          <span class="archive__tag">？？？</span>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -484,6 +596,37 @@
       </div>
     </div>
   </footer>
+
+
+  <!-- =====================================================
+       STASH PASS — discovery tracker (WEB → リアル → WEB)
+  ===================================================== -->
+  <div class="stash-pass" id="stash-pass" hidden>
+    <button class="stash-pass__toggle" id="stash-pass-toggle" type="button" aria-expanded="false" aria-label="STASH PASS を開く">
+      <span class="stash-pass__badge">STASH<br>PASS</span>
+      <span class="stash-pass__dots" id="stash-pass-dots" aria-hidden="true"></span>
+    </button>
+
+    <div class="stash-pass__panel" id="stash-pass-panel" hidden>
+      <button class="stash-pass__close" id="stash-pass-close" type="button" aria-label="閉じる">✕</button>
+      <p class="stash-pass__kicker">— STASH PASS</p>
+      <p class="stash-pass__progress"><span id="stash-pass-count">0</span> / 3 発掘</p>
+
+      <div class="stash-pass__locked" id="stash-pass-locked">
+        <p class="stash-pass__hint">サイトに隠れた “お宝” を 3つ 見つけよう。<br>DIG WALL から掘りはじめると見つかるかも。</p>
+        <a href="#digwall" class="btn btn--outline btn--sm">DIG WALL へ →</a>
+      </div>
+
+      <div class="stash-pass__unlocked" id="stash-pass-unlocked" hidden>
+        <p class="stash-pass__got">PASS 獲得！</p>
+        <p class="stash-pass__code" id="stash-pass-code">PASS-9223-DIG</p>
+        <p class="stash-pass__msg">
+          このパスを会場で見せると、<br><strong>限定ステッカーを1枚プレゼント。</strong>
+        </p>
+        <a href="https://instagram.com/stashdig" class="btn btn--yellow btn--sm" target="_blank" rel="noopener">Instagram で受け取り方を見る →</a>
+      </div>
+    </div>
+  </div>
 
 
   <script src="script.js"></script>

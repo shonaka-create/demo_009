@@ -131,23 +131,85 @@
     }, { passive: true });
   }
 
-  // ── DIG characters — dig-up reveal on scroll ──────────
-  var digItems = document.querySelectorAll('[data-dig]');
-  if ('IntersectionObserver' in window && digItems.length) {
-    var digIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          // small delay so user "sees" the dig happening
-          setTimeout(function () {
-            e.target.classList.add('dug');
-          }, 300);
-          digIO.unobserve(e.target);
-        }
+  // ── DIG WALL + STASH PASS ─────────────────────────────
+  // Peel / press the wall; finding the 3 hidden "treasures" grants a
+  // STASH PASS, persisted in localStorage. WEB → リアル → WEB の入口。
+  (function digWall() {
+    var TOTAL = 3;
+    var KEY = 'stash_found_v1';
+    var pass = document.getElementById('stash-pass');
+    if (!pass) return;
+
+    var board    = document.getElementById('dw-board');
+    var dotsWrap = document.getElementById('stash-pass-dots');
+    var countEl  = document.getElementById('stash-pass-count');
+    var lockedEl = document.getElementById('stash-pass-locked');
+    var unlockEl = document.getElementById('stash-pass-unlocked');
+    var panel    = document.getElementById('stash-pass-panel');
+    var toggle   = document.getElementById('stash-pass-toggle');
+    var closeBtn = document.getElementById('stash-pass-close');
+
+    var found = [];
+    try { found = JSON.parse(localStorage.getItem(KEY) || '[]') || []; } catch (e) { found = []; }
+    found = found.filter(function (v, i, a) { return a.indexOf(v) === i; });
+
+    function save() { try { localStorage.setItem(KEY, JSON.stringify(found)); } catch (e) {} }
+
+    function renderDots() {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      for (var i = 0; i < TOTAL; i++) {
+        var d = document.createElement('i');
+        if (i < found.length) d.className = 'on';
+        dotsWrap.appendChild(d);
+      }
+    }
+
+    function renderPass() {
+      if (found.length > 0) pass.hidden = false;
+      if (countEl) countEl.textContent = String(Math.min(found.length, TOTAL));
+      renderDots();
+      var complete = found.length >= TOTAL;
+      pass.classList.toggle('is-complete', complete);
+      if (lockedEl) lockedEl.hidden = complete;
+      if (unlockEl) unlockEl.hidden = !complete;
+    }
+
+    function openPanel(open) {
+      if (!panel || !toggle) return;
+      panel.hidden = !open;
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    if (toggle)   toggle.addEventListener('click', function () { openPanel(panel.hidden); });
+    if (closeBtn) closeBtn.addEventListener('click', function () { openPanel(false); });
+
+    function registerTreasure(id, el) {
+      if (!id || found.indexOf(id) !== -1) return;
+      found.push(id); save(); renderPass();
+      if (el) {
+        el.classList.remove('just-found');
+        // reflow to restart the animation
+        void el.offsetWidth;
+        el.classList.add('just-found');
+      }
+      if (found.length >= TOTAL) { setTimeout(function () { openPanel(true); }, 480); }
+    }
+
+    if (board) {
+      var items = board.querySelectorAll('.dw-item');
+      items.forEach(function (el) {
+        var kind = el.getAttribute('data-dw');
+        var id   = el.getAttribute('data-id');
+        if (kind === 'treasure' && id && found.indexOf(id) !== -1) el.classList.add('revealed');
+        el.addEventListener('click', function () {
+          var nowRevealed = el.classList.toggle('revealed');
+          if (kind === 'treasure' && nowRevealed) registerTreasure(id, el);
+        });
       });
-    }, { threshold: 0.2 });
-    digItems.forEach(function (el) { digIO.observe(el); });
-  } else {
-    digItems.forEach(function (el) { el.classList.add('dug'); });
-  }
+    }
+
+    renderPass();
+  })();
 
 })();
