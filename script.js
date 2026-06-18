@@ -84,8 +84,8 @@
   if (nav) {
     window.addEventListener('scroll', function () {
       nav.style.borderBottomColor = window.scrollY > 40
-        ? 'rgba(255,95,160,.35)'
-        : 'rgba(255,95,160,.18)';
+        ? 'rgba(255,60,0,.32)'
+        : 'rgba(255,60,0,.14)';
     }, { passive: true });
   }
 

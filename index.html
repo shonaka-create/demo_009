@@ -50,80 +50,57 @@
   ===================================================== -->
   <section class="hero" id="top" aria-label="トップビジュアル">
 
-    <!-- Virtual world digital space background -->
-    <div class="hero__sky" aria-hidden="true"></div>
+    <!-- Concrete wall background -->
+    <div class="hero__wall" aria-hidden="true"></div>
 
-    <!-- Right side: OZ virtual portal + DIG elements -->
-    <div class="hero__portal-zone" aria-hidden="true">
-
-      <!-- Floating DIG! neon labels -->
-      <div class="hero__dig-float">DIG!</div>
-      <div class="hero__dig-float">✦ STASH</div>
-      <div class="hero__dig-float">→ DIG →</div>
-      <div class="hero__dig-float">✿ 掘れ</div>
-
-      <!-- Virtual HUD coordinate -->
-      <div class="hero__hud-coord">
-        <span>OZ : X240 · Y180</span>
-        <span>ONLINE ●</span>
-      </div>
-
-      <!-- Avatar portal with spinning rings -->
-      <div class="hero__portal">
-        <div class="hero__portal-ring"></div>
-        <div class="hero__portal-ring"></div>
-        <div class="hero__portal-ring"></div>
-        <div class="hero__portal-inner">
-          <div class="hero__chara-badge">TMC キャラクター ✦</div>
-          <img src="TMCキャラ_01.jpg" alt="TMC キャラクター" class="hero__chara-img">
-          <span class="hero__sparkle">✦</span>
-          <span class="hero__sparkle">★</span>
-          <span class="hero__sparkle">✿</span>
-        </div>
-      </div>
-
+    <!-- Sticker bomb — flyer taglines as scattered stickers (decorative) -->
+    <div class="hero__stickers" aria-hidden="true">
+      <span class="hsticker hsticker--a">DIG AREA</span>
+      <span class="hsticker hsticker--b">HIDDEN GEMS</span>
+      <span class="hsticker hsticker--c">FIND YOUR VIBE</span>
+      <span class="hsticker hsticker--d">GOOD THINGS<br>TAKE DIGGING</span>
+      <span class="hsticker hsticker--e">HAVE A<br>GOOD DIG!</span>
+      <span class="hsticker hsticker--f">SOMEONE'S TRASH<br>SOMEONE'S TREASURE</span>
+      <span class="hsticker hsticker--g">ENERGY ⚡</span>
     </div>
 
     <!-- Content -->
     <div class="hero__content wrap">
-      <div class="hero__tags reveal">
-        <span class="tag">西東京最大級</span>
-        <span class="tag">多摩センター</span>
-        <span class="tag">古着フェス</span>
-      </div>
+      <p class="hero__eyebrow reveal">西東京最大級の古着フェス開催</p>
 
       <h1 class="hero__title reveal">STASH</h1>
 
-      <div class="hero__sub-bubble reveal">
-        <p class="hero__sub">DON'T STOP<br>DIGGIN'</p>
-      </div>
+      <p class="hero__script reveal">Don't Stop Diggin'</p>
 
       <p class="hero__lead reveal">
         都内各地から<strong>個性的な古着屋</strong>が多摩センターに集結。<br>
         レコードを掘るように、自分だけの一着を見つける——<br>
-        <strong>ストリート系古着フェスティバル</strong>が、西東京に誕生します。
+        <strong>ストリート系古着フェスティバル</strong>。
       </p>
 
       <div class="hero__meta reveal">
         <div class="hero__meta-item">
           <span class="hero__meta-key">Date</span>
-          <span class="hero__meta-val">9.22 (月) — 9.23 (火・祝)</span>
+          <span class="hero__meta-val">9.22 (火) — 9.23 (水・祝)</span>
+        </div>
+        <div class="hero__meta-item">
+          <span class="hero__meta-key">Time</span>
+          <span class="hero__meta-val">11:00 — 18:00</span>
         </div>
         <div class="hero__meta-item">
           <span class="hero__meta-key">Place</span>
           <span class="hero__meta-val">多摩センター駅前歩道</span>
         </div>
         <div class="hero__meta-item">
-          <span class="hero__meta-key">Time</span>
-          <span class="hero__meta-val">10:00 — 17:00</span>
-        </div>
-        <div class="hero__meta-item">
           <span class="hero__meta-key">Entry</span>
-          <span class="hero__meta-val">無料入場</span>
+          <span class="hero__meta-val">入場無料</span>
         </div>
       </div>
 
-      <a href="#about" class="btn btn--pink reveal">詳しく見る ↓</a>
+      <p class="hero__host reveal">
+        主催：一般社団法人TMC　／　TEL 090-4000-3300　／　stashdig.com
+      </p>
+
     </div>
 
     <div class="hero__scroll" aria-hidden="true"></div>
@@ -166,40 +143,6 @@
     <div class="wrap">
       <div class="about__inner">
 
-        <!-- DIG cat character — digs up from bottom of about section -->
-        <div class="dig-wrap" style="bottom:-30px; right: 12px;" data-dig>
-          <span class="dig-label">DIG!</span>
-          <svg class="chibi-cat" viewBox="0 0 80 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <!-- Ears -->
-            <polygon points="12,28 22,4 32,28" fill="#72DECA"/>
-            <polygon points="16,28 22,10 28,28" fill="#FFB3D3"/>
-            <polygon points="48,28 58,4 68,28" fill="#72DECA"/>
-            <polygon points="52,28 58,10 64,28" fill="#FFB3D3"/>
-            <!-- Head -->
-            <circle cx="40" cy="40" r="28" fill="#72DECA"/>
-            <!-- Eyes -->
-            <ellipse cx="30" cy="38" rx="5.5" ry="6.5" fill="#2D1B5E"/>
-            <ellipse cx="50" cy="38" rx="5.5" ry="6.5" fill="#2D1B5E"/>
-            <circle cx="28" cy="36" r="2" fill="white"/>
-            <circle cx="48" cy="36" r="2" fill="white"/>
-            <!-- Blush -->
-            <ellipse cx="20" cy="44" rx="7.5" ry="4.5" fill="#FF8DB0" opacity="0.52"/>
-            <ellipse cx="60" cy="44" rx="7.5" ry="4.5" fill="#FF8DB0" opacity="0.52"/>
-            <!-- Mouth -->
-            <path d="M36 48 Q40 54 44 48" stroke="#2D1B5E" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <!-- Body -->
-            <ellipse cx="40" cy="76" rx="23" ry="18" fill="#72DECA"/>
-            <!-- Belly -->
-            <ellipse cx="40" cy="74" rx="13" ry="11" fill="rgba(255,255,255,0.38)"/>
-            <!-- Legs -->
-            <ellipse cx="27" cy="92" rx="9" ry="6" fill="#72DECA"/>
-            <ellipse cx="53" cy="92" rx="9" ry="6" fill="#72DECA"/>
-            <!-- Shovel -->
-            <rect x="62" y="58" width="4" height="22" rx="2" fill="#C8A040"/>
-            <rect x="58" y="78" width="12" height="10" rx="2" fill="#C8A040"/>
-          </svg>
-        </div>
-
         <!-- Text -->
         <div class="about__text">
           <p class="sec-label reveal">— CONCEPT</p>
@@ -232,26 +175,18 @@
           </div>
         </div>
 
-        <!-- Visual -->
+        <!-- Visual — sticker collage -->
         <div class="about__visual reveal">
-          <div class="about__grid">
-            <div class="ph ab-img ab-img--main">
-              <span class="ph__text">受領資料を差し込み予定<br>（イベント雰囲気 / 古着 / 会場）</span>
-            </div>
-            <div class="ph ab-img ab-img--s1">
-              <span class="ph__text">画像挿入予定</span>
-            </div>
-            <div class="ph ab-img ab-img--s2">
-              <span class="ph__text">画像挿入予定</span>
-            </div>
-            <div class="ph ab-img ab-img--wide">
-              <span class="ph__text">画像挿入予定（横長）</span>
-            </div>
+          <div class="about__collage" aria-hidden="true">
+            <span class="acol acol--quote">SOMEONE'S TRASH,<br>SOMEONE'S TREASURE.</span>
+            <span class="acol acol--1">DIG</span>
+            <span class="acol acol--2">90s</span>
+            <span class="acol acol--3">VINTAGE</span>
+            <span class="acol acol--4">STREET</span>
+            <span class="acol acol--5">掘れ</span>
+            <span class="acol acol--6">RECORD SHOP MOOD</span>
           </div>
           <div class="tape-stripe"></div>
-          <div class="about__chara-wrap" aria-hidden="true">
-            <img src="TMCキャラ_01.jpg" alt="" class="about__chara-float">
-          </div>
         </div>
 
       </div>
@@ -267,39 +202,16 @@
       <p class="sec-label reveal">— EVENT INFO</p>
       <h2 class="sec-title reveal">NEXT EVENT</h2>
 
-      <!-- DIG star character — left side peek -->
-      <div class="dig-wrap" style="bottom:-28px; left:0;" data-dig>
-        <span class="dig-label">DIG!</span>
-        <svg class="chibi-star" viewBox="0 0 68 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- Star body -->
-          <polygon points="34,4 41,24 62,24 46,37 52,58 34,46 16,58 22,37 6,24 27,24" fill="#FFD83D" opacity="0.15"/>
-          <polygon points="34,8 40,23 57,23 44,33 49,50 34,41 19,50 24,33 11,23 28,23" fill="#FFD83D"/>
-          <!-- Face on star -->
-          <ellipse cx="28" cy="28" rx="4" ry="5" fill="#2D1B5E"/>
-          <ellipse cx="40" cy="28" rx="4" ry="5" fill="#2D1B5E"/>
-          <circle cx="26.5" cy="26.5" r="1.5" fill="white"/>
-          <circle cx="38.5" cy="26.5" r="1.5" fill="white"/>
-          <ellipse cx="22" cy="32" rx="5.5" ry="3.5" fill="#FF8DB0" opacity="0.5"/>
-          <ellipse cx="46" cy="32" rx="5.5" ry="3.5" fill="#FF8DB0" opacity="0.5"/>
-          <path d="M30 35 Q34 40 38 35" stroke="#2D1B5E" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-          <!-- Arms/points sparkle -->
-          <circle cx="6" cy="22" r="3" fill="#FFD83D" opacity="0.6"/>
-          <circle cx="62" cy="22" r="3" fill="#FFD83D" opacity="0.6"/>
-          <!-- Body -->
-          <ellipse cx="34" cy="64" rx="14" ry="12" fill="#FFD83D"/>
-          <ellipse cx="34" cy="62" rx="8.5" ry="7" fill="rgba(255,255,255,0.38)"/>
-          <!-- Legs -->
-          <ellipse cx="24" cy="77" rx="7" ry="5" fill="#FFD83D"/>
-          <ellipse cx="44" cy="77" rx="7" ry="5" fill="#FFD83D"/>
-        </svg>
-      </div>
-
       <div class="event-info__grid">
 
         <!-- Flyer visual -->
         <div class="event-flyer-wrap reveal">
-          <div class="ph event-flyer">
-            <span class="ph__text">フライヤー<br>ビジュアル<br>差し込み予定</span>
+          <div class="mini-poster">
+            <span class="mini-poster__eyebrow">西東京最大級の古着フェス</span>
+            <span class="mini-poster__logo">STASH</span>
+            <span class="mini-poster__script">Don't Stop Diggin'</span>
+            <span class="mini-poster__date">9.22<small>TUE</small> — 23<small>WED</small></span>
+            <span class="mini-poster__place">多摩センター駅前歩道<br>11:00 – 18:00</span>
           </div>
           <div class="circle-sticker circle-sticker--free">FREE<br>ENTRY</div>
         </div>
@@ -309,11 +221,11 @@
           <div class="info-card">
             <div class="info-row">
               <span class="info-key">DATE</span>
-              <span class="info-val">2025年9月22日(月) — 9月23日(火・祝)</span>
+              <span class="info-val">2026年9月22日(火) — 9月23日(水・祝)</span>
             </div>
             <div class="info-row">
               <span class="info-key">TIME</span>
-              <span class="info-val">10:00 – 17:00</span>
+              <span class="info-val">11:00 – 18:00</span>
             </div>
             <div class="info-row">
               <span class="info-key">PLACE</span>
@@ -328,7 +240,7 @@
             </div>
             <div class="info-row">
               <span class="info-key">SHOPS</span>
-              <span class="info-val">出店数 XX店舗（予定）</span>
+              <span class="info-val">出店者ラインナップ 順次公開</span>
             </div>
           </div>
 
@@ -351,188 +263,40 @@
   <!-- =====================================================
        VENDORS
   ===================================================== -->
-  <section class="section" id="vendors" aria-label="出店者一覧">
+  <section class="section" id="vendors" aria-label="出店者">
     <div class="wrap">
       <div class="vendors__head">
         <div>
           <p class="sec-label reveal">— VENDORS</p>
-          <h2 class="sec-title reveal" style="margin-bottom:0;">出店者一覧</h2>
+          <h2 class="sec-title reveal" style="margin-bottom:0;">出店者</h2>
         </div>
         <p class="vendors__sub reveal">都内各地から<br>個性的な古着屋が集結。</p>
-
-        <!-- DIG bear character -->
-        <div class="dig-wrap" style="bottom:-36px; right:-8px;" data-dig>
-          <span class="dig-label">DIG!</span>
-          <svg class="chibi-bear" viewBox="0 0 88 102" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <!-- Ears -->
-            <circle cx="19" cy="22" r="14" fill="#FFD966"/>
-            <circle cx="19" cy="22" r="8.5" fill="#FFB3D3"/>
-            <circle cx="69" cy="22" r="14" fill="#FFD966"/>
-            <circle cx="69" cy="22" r="8.5" fill="#FFB3D3"/>
-            <!-- Head -->
-            <circle cx="44" cy="40" r="30" fill="#FFD966"/>
-            <!-- Eyes -->
-            <ellipse cx="33" cy="38" rx="6" ry="7" fill="#2D1B5E"/>
-            <ellipse cx="55" cy="38" rx="6" ry="7" fill="#2D1B5E"/>
-            <circle cx="31" cy="36" r="2.5" fill="white"/>
-            <circle cx="53" cy="36" r="2.5" fill="white"/>
-            <!-- Nose -->
-            <ellipse cx="44" cy="46" rx="6.5" ry="4.5" fill="#FF7BAA"/>
-            <!-- Blush -->
-            <ellipse cx="22" cy="46" rx="9" ry="5.5" fill="#FF8DB0" opacity="0.48"/>
-            <ellipse cx="66" cy="46" rx="9" ry="5.5" fill="#FF8DB0" opacity="0.48"/>
-            <!-- Mouth -->
-            <path d="M40 54 Q44 60 48 54" stroke="#2D1B5E" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-            <!-- Body -->
-            <ellipse cx="44" cy="82" rx="25" ry="19" fill="#FFD966"/>
-            <!-- Belly -->
-            <ellipse cx="44" cy="80" rx="15" ry="13" fill="rgba(255,255,255,0.36)"/>
-            <!-- Legs -->
-            <ellipse cx="29" cy="99" rx="10" ry="6.5" fill="#FFD966"/>
-            <ellipse cx="59" cy="99" rx="10" ry="6.5" fill="#FFD966"/>
-            <!-- Shovel -->
-            <rect x="72" y="64" width="4" height="24" rx="2" fill="#8B6030"/>
-            <rect x="68" y="86" width="13" height="10" rx="2" fill="#8B6030"/>
-          </svg>
-        </div>
       </div>
 
-      <div class="vendors__grid">
-
-        <article class="v-card reveal">
-          <div class="ph v-card__img"><span class="ph__text">店舗画像<br>差し込み予定</span></div>
-          <div class="v-card__body">
-            <div class="v-card__tags">
-              <span class="tag tag--sm">90s</span>
-              <span class="tag tag--sm">American</span>
-            </div>
-            <h3 class="v-card__name">店舗名 A</h3>
-            <p class="v-card__area">東京 / エリア</p>
-          </div>
-        </article>
-
-        <article class="v-card reveal reveal-delay-1">
-          <div class="ph v-card__img"><span class="ph__text">店舗画像<br>差し込み予定</span></div>
-          <div class="v-card__body">
-            <div class="v-card__tags">
-              <span class="tag tag--sm">Euro</span>
-              <span class="tag tag--sm">Workwear</span>
-            </div>
-            <h3 class="v-card__name">店舗名 B</h3>
-            <p class="v-card__area">東京 / エリア</p>
-          </div>
-        </article>
-
-        <article class="v-card reveal reveal-delay-2">
-          <div class="ph v-card__img"><span class="ph__text">店舗画像<br>差し込み予定</span></div>
-          <div class="v-card__body">
-            <div class="v-card__tags">
-              <span class="tag tag--sm">Street</span>
-              <span class="tag tag--sm">Y2K</span>
-            </div>
-            <h3 class="v-card__name">店舗名 C</h3>
-            <p class="v-card__area">東京 / エリア</p>
-          </div>
-        </article>
-
-        <article class="v-card reveal reveal-delay-3">
-          <div class="ph v-card__img"><span class="ph__text">店舗画像<br>差し込み予定</span></div>
-          <div class="v-card__body">
-            <div class="v-card__tags">
-              <span class="tag tag--sm">Military</span>
-              <span class="tag tag--sm">Outdoor</span>
-            </div>
-            <h3 class="v-card__name">店舗名 D</h3>
-            <p class="v-card__area">東京 / エリア</p>
-          </div>
-        </article>
-
-        <article class="v-card reveal">
-          <div class="ph v-card__img"><span class="ph__text">店舗画像<br>差し込み予定</span></div>
-          <div class="v-card__body">
-            <div class="v-card__tags">
-              <span class="tag tag--sm">Deadstock</span>
-            </div>
-            <h3 class="v-card__name">店舗名 E</h3>
-            <p class="v-card__area">東京 / エリア</p>
-          </div>
-        </article>
-
-        <article class="v-card reveal reveal-delay-1">
-          <div class="ph v-card__img"><span class="ph__text">店舗画像<br>差し込み予定</span></div>
-          <div class="v-card__body">
-            <div class="v-card__tags">
-              <span class="tag tag--sm">Harajuku</span>
-              <span class="tag tag--sm">90s</span>
-            </div>
-            <h3 class="v-card__name">店舗名 F</h3>
-            <p class="v-card__area">東京 / エリア</p>
-          </div>
-        </article>
-
-        <article class="v-card reveal reveal-delay-2">
-          <div class="ph v-card__img"><span class="ph__text">店舗画像<br>差し込み予定</span></div>
-          <div class="v-card__body">
-            <div class="v-card__tags">
-              <span class="tag tag--sm">Ivy</span>
-              <span class="tag tag--sm">Preppy</span>
-            </div>
-            <h3 class="v-card__name">店舗名 G</h3>
-            <p class="v-card__area">東京 / エリア</p>
-          </div>
-        </article>
-
-        <article class="v-card reveal reveal-delay-3">
-          <div class="ph v-card__img"><span class="ph__text">店舗画像<br>差し込み予定</span></div>
-          <div class="v-card__body">
-            <div class="v-card__tags">
-              <span class="tag tag--sm">Select</span>
-              <span class="tag tag--sm">Vintage</span>
-            </div>
-            <h3 class="v-card__name">店舗名 H</h3>
-            <p class="v-card__area">東京 / エリア</p>
-          </div>
-        </article>
-
+      <div class="lineup-coming reveal">
+        <span class="lineup-coming__tape">COMING SOON</span>
+        <p class="lineup-coming__lead">出店者ラインナップは、<br>開催に向けて順次解禁。</p>
+        <p class="lineup-coming__sub">
+          都内各地から集まる個性的な古着屋を、ひと組ずつ公開していきます。<br>
+          壁が埋まっていく様子も、STASH の楽しみ方のひとつ。
+        </p>
+        <p class="lineup-coming__note">
+          解禁情報は Instagram
+          <a href="https://instagram.com/stashdig" target="_blank" rel="noopener">@stashdig</a>
+          でお知らせします。
+        </p>
       </div>
 
-      <div style="text-align:center;margin-top:40px;" class="reveal">
-        <a href="vendors.html" class="btn btn--outline">出店者募集要項を見る →</a>
-        <div style="margin-top:24px;">
-          <p style="font-family:var(--ff-sub);font-size:11px;letter-spacing:.14em;color:var(--gray-lt);text-transform:uppercase;margin-bottom:10px;">出店者 募集中</p>
-          <a href="vendors.html" class="btn btn--yellow">ENTRY →</a>
-        </div>
+      <div class="vendors__cta reveal">
+        <p class="vendors-recruiting">
+          <span class="vendors-recruiting__dot"></span>
+          出店者 募集中
+          <span class="vendors-recruiting__dot"></span>
+        </p>
+        <p class="vendors__cta-text">あなたの古着屋・ヴィンテージショップで、この壁を埋めませんか。</p>
+        <a href="vendors.html" class="btn btn--yellow">出店者募集要項を見る →</a>
       </div>
     </div>
-  </section>
-
-
-  <!-- =====================================================
-       GALLERY — Horizontal Slider
-  ===================================================== -->
-  <section class="gallery-section section" id="gallery" aria-label="ギャラリー" style="padding-top:0; padding-bottom:0;">
-    <div class="wrap" style="margin-bottom:16px;">
-      <p class="sec-label">— GALLERY</p>
-    </div>
-
-    <div class="gallery__slider-wrap">
-      <div class="gallery__slider" id="gallery-slider">
-        <div class="ph gallery__slide"><span class="ph__text">イベント写真 1<br>差し込み予定</span></div>
-        <div class="ph gallery__slide"><span class="ph__text">イベント写真 2<br>差し込み予定</span></div>
-        <div class="ph gallery__slide"><span class="ph__text">イベント写真 3<br>差し込み予定</span></div>
-        <div class="ph gallery__slide"><span class="ph__text">イベント写真 4<br>差し込み予定</span></div>
-        <div class="ph gallery__slide"><span class="ph__text">イベント写真 5<br>差し込み予定</span></div>
-        <div class="ph gallery__slide"><span class="ph__text">イベント写真 6<br>差し込み予定</span></div>
-        <div class="ph gallery__slide"><span class="ph__text">イベント写真 7<br>差し込み予定</span></div>
-        <div class="ph gallery__slide"><span class="ph__text">イベント写真 8<br>差し込み予定</span></div>
-        <div class="ph gallery__slide"><span class="ph__text">イベント写真 9<br>差し込み予定</span></div>
-        <div class="ph gallery__slide"><span class="ph__text">イベント写真 10<br>差し込み予定</span></div>
-      </div>
-      <button class="gallery__btn gallery__btn--prev" aria-label="前のスライド">‹</button>
-      <button class="gallery__btn gallery__btn--next" aria-label="次のスライド">›</button>
-    </div>
-
-    <div class="gallery__dots" id="gallery-dots" aria-label="スライド番号"></div>
   </section>
 
 
@@ -549,8 +313,12 @@
 
         <!-- Map -->
         <div class="reveal">
-          <div class="ph access__map">
-            <span class="ph__text">地図・マップ 差し込み予定<br>（Google Map 埋め込み or 地図画像）</span>
+          <div class="access__map">
+            <iframe
+              src="https://www.google.com/maps?q=%E5%A4%9A%E6%91%A9%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E9%A7%85&output=embed"
+              title="多摩センター駅 周辺地図"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
           </div>
         </div>
 
@@ -595,7 +363,7 @@
             <p>※ 詳細な会場マップはイベント前にInstagramにてお知らせします。</p>
           </div>
 
-          <a href="https://goo.gl/maps/xxx" class="btn btn--outline btn--sm" target="_blank" rel="noopener">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%9A%E6%91%A9%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E9%A7%85" class="btn btn--outline btn--sm" target="_blank" rel="noopener">
             Google Map で見る →
           </a>
         </div>
@@ -629,8 +397,10 @@
 
         <!-- Visual -->
         <div class="entry-cta__visual reveal">
-          <div class="ph entry-cta__img">
-            <span class="ph__text">出店イメージ<br>差し込み予定<br>（ブース / 商品 / 空間）</span>
+          <div class="entry-cta__poster">
+            <span class="entry-cta__poster-sm">DIGGERS</span>
+            <span class="entry-cta__poster-lg">WELCOME</span>
+            <span class="entry-cta__poster-sm">ジャンル不問</span>
           </div>
         </div>
 
@@ -648,37 +418,12 @@
         <div>
           <p class="sec-label reveal">— FOLLOW US</p>
           <h2 class="sec-title reveal" style="margin-bottom:0;">INSTAGRAM</h2>
-          <a href="https://instagram.com/stashdig" class="insta__handle reveal" target="_blank" rel="noopener">@stashdig</a>
         </div>
-        <a href="https://instagram.com/stashdig" class="btn btn--outline reveal" target="_blank" rel="noopener">
-          フォローする →
-        </a>
       </div>
 
-      <div class="insta__grid">
-        <a href="https://instagram.com/stashdig" class="ph insta__post" target="_blank" rel="noopener">
-          <span class="ph__text">Instagram<br>投稿画像<br>差し込み予定</span>
-        </a>
-        <a href="https://instagram.com/stashdig" class="ph insta__post" target="_blank" rel="noopener">
-          <span class="ph__text">投稿画像</span>
-        </a>
-        <a href="https://instagram.com/stashdig" class="ph insta__post" target="_blank" rel="noopener">
-          <span class="ph__text">投稿画像</span>
-        </a>
-        <a href="https://instagram.com/stashdig" class="ph insta__post" target="_blank" rel="noopener">
-          <span class="ph__text">投稿画像</span>
-        </a>
-        <a href="https://instagram.com/stashdig" class="ph insta__post" target="_blank" rel="noopener">
-          <span class="ph__text">投稿画像</span>
-        </a>
-        <a href="https://instagram.com/stashdig" class="ph insta__post" target="_blank" rel="noopener">
-          <span class="ph__text">投稿画像</span>
-        </a>
-      </div>
-
-      <div style="text-align:center;margin-top:32px;" class="reveal">
-        <a href="https://instagram.com/stashdig" class="btn btn--outline" target="_blank" rel="noopener">
-          Instagram でイベント情報をチェック →
+      <div style="margin-top:24px;" class="reveal">
+        <a href="https://instagram.com/stashdig" class="btn btn--orange btn--lg" target="_blank" rel="noopener">
+          @stashdig をフォロー →
         </a>
       </div>
     </div>
@@ -734,7 +479,7 @@
 
     <div class="footer__bottom">
       <div class="wrap">
-        <p class="footer__copy">© 2025 STASH / タイムマシーンカンパニー. All rights reserved.</p>
+        <p class="footer__copy">© 2026 STASH / タイムマシーンカンパニー. All rights reserved.</p>
         <p class="footer__url">stashdig.com</p>
       </div>
     </div>
