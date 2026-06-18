@@ -261,6 +261,7 @@
     var map = document.getElementById('dig-map');
     if (!map) return;
 
+    // Dig a plot open
     map.querySelectorAll('.dm-plot').forEach(function (el) {
       el.addEventListener('click', function () {
         var dug = el.classList.toggle('dug');
@@ -269,6 +270,19 @@
           void el.offsetWidth; // reflow to restart animation
           el.classList.add('just-dug');
         }
+      });
+    });
+
+    // Slider arrows — scroll the track the arrow belongs to
+    map.querySelectorAll('.dm-arrow').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var slider = btn.closest('.dm-slider');
+        var track  = slider && slider.querySelector('.dm-track');
+        if (!track) return;
+        var dir  = parseInt(btn.getAttribute('data-dir'), 10) || 1;
+        var plot = track.querySelector('.dm-plot');
+        var step = plot ? plot.offsetWidth + 14 : track.clientWidth * 0.8;
+        track.scrollBy({ left: dir * step * 2, behavior: 'smooth' });
       });
     });
   })();
