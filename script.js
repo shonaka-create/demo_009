@@ -132,11 +132,11 @@
   }
 
   // ── DIG WALL + STASH PASS ─────────────────────────────
-  // Peel / press the wall; finding the 3 hidden "treasures" grants a
-  // STASH PASS, persisted in localStorage. WEB → リアル → WEB の入口。
+  // Peel the wall; tapping the 3 hidden "treasures" (暗号①②③) assembles a
+  // STASH-related secret phrase and grants a STASH PASS. State is NOT
+  // persisted — one reload and you have to dig it up all over again.
   (function digWall() {
     var TOTAL = 3;
-    var KEY = 'stash_found_v1';
     var pass = document.getElementById('stash-pass');
     if (!pass) return;
 
@@ -148,12 +148,20 @@
     var panel    = document.getElementById('stash-pass-panel');
     var toggle   = document.getElementById('stash-pass-toggle');
     var closeBtn = document.getElementById('stash-pass-close');
+    var secretEl = document.getElementById('stash-pass-secret');
+    var codeEl   = document.getElementById('stash-pass-code');
+    var copyBtn  = document.getElementById('stash-pass-copy');
 
+    // Canonical order + words come from the board markup (data-id / data-word).
+    var ORDER = [];   // ['t1','t2','t3']
+    var WORDS = {};   // { t1: "DON'T", ... }
+
+    // In-memory only — resets on reload (no localStorage).
     var found = [];
-    try { found = JSON.parse(localStorage.getItem(KEY) || '[]') || []; } catch (e) { found = []; }
-    found = found.filter(function (v, i, a) { return a.indexOf(v) === i; });
 
-    function save() { try { localStorage.setItem(KEY, JSON.stringify(found)); } catch (e) {} }
+    function secretPhrase() {
+      return ORDER.map(function (id) { return WORDS[id]; }).join(' ');
+    }
 
     function renderDots() {
       if (!dotsWrap) return;
@@ -173,6 +181,7 @@
       pass.classList.toggle('is-complete', complete);
       if (lockedEl) lockedEl.hidden = complete;
       if (unlockEl) unlockEl.hidden = !complete;
+      if (complete && secretEl) secretEl.textContent = secretPhrase();
     }
 
     function openPanel(open) {
@@ -184,9 +193,40 @@
     if (toggle)   toggle.addEventListener('click', function () { openPanel(panel.hidden); });
     if (closeBtn) closeBtn.addEventListener('click', function () { openPanel(false); });
 
+    // Copy the assembled cipher + pass code to the clipboard.
+    function fallbackCopy(text) {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        document.execCommand('copy'); document.body.removeChild(ta);
+      } catch (e) {}
+    }
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        var code = codeEl ? codeEl.textContent.trim() : '';
+        var text = 'STASH 発掘暗号\n' + secretPhrase() + '\n' + code;
+        var done = function () {
+          copyBtn.classList.add('copied');
+          copyBtn.textContent = '✓ コピーしました';
+          setTimeout(function () {
+            copyBtn.classList.remove('copied');
+            copyBtn.textContent = '📋 暗号をコピー';
+          }, 1800);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+        } else {
+          fallbackCopy(text); done();
+        }
+      });
+    }
+
     function registerTreasure(id, el) {
       if (!id || found.indexOf(id) !== -1) return;
-      found.push(id); save(); renderPass();
+      found.push(id); renderPass();
       if (el) {
         el.classList.remove('just-found');
         // reflow to restart the animation
@@ -201,7 +241,10 @@
       items.forEach(function (el) {
         var kind = el.getAttribute('data-dw');
         var id   = el.getAttribute('data-id');
-        if (kind === 'treasure' && id && found.indexOf(id) !== -1) el.classList.add('revealed');
+        if (kind === 'treasure' && id) {
+          ORDER.push(id);
+          WORDS[id] = el.getAttribute('data-word') || id;
+        }
         el.addEventListener('click', function () {
           var nowRevealed = el.classList.toggle('revealed');
           if (kind === 'treasure' && nowRevealed) registerTreasure(id, el);
@@ -227,6 +270,25 @@
           el.classList.add('just-dug');
         }
       });
+    });
+  })();
+
+  // ── Sticker → real image (drop-in) ────────────────────
+  // For every [data-img], try images/stickers/<name>.png. If it loads,
+  // swap the CSS text sticker for the real image; if not, leave the CSS one.
+  (function stickerImages() {
+    var els = document.querySelectorAll('[data-img]');
+    els.forEach(function (el) {
+      var name = el.getAttribute('data-img');
+      if (!name) return;
+      var url = 'images/stickers/' + name + '.png';
+      var probe = new Image();
+      probe.onload = function () {
+        el.style.backgroundImage = 'url("' + url + '")';
+        el.classList.add('has-img');
+      };
+      probe.onerror = function () { /* keep CSS fallback */ };
+      probe.src = url;
     });
   })();
 

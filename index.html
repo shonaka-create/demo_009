@@ -56,13 +56,13 @@
 
     <!-- Sticker bomb — flyer taglines as scattered stickers (decorative) -->
     <div class="hero__stickers" aria-hidden="true">
-      <span class="hsticker hsticker--a">DIG AREA</span>
-      <span class="hsticker hsticker--b">HIDDEN GEMS</span>
-      <span class="hsticker hsticker--c">FIND YOUR VIBE</span>
-      <span class="hsticker hsticker--d">GOOD THINGS<br>TAKE DIGGING</span>
-      <span class="hsticker hsticker--e">HAVE A<br>GOOD DIG!</span>
-      <span class="hsticker hsticker--f">SOMEONE'S TRASH<br>SOMEONE'S TREASURE</span>
-      <span class="hsticker hsticker--g">ENERGY ⚡</span>
+      <span class="hsticker hsticker--a" data-img="dig-area">DIG AREA</span>
+      <span class="hsticker hsticker--b" data-img="hidden-gems">HIDDEN GEMS</span>
+      <span class="hsticker hsticker--c" data-img="find-your-vibe">FIND YOUR VIBE</span>
+      <span class="hsticker hsticker--d" data-img="good-things">GOOD THINGS<br>TAKE DIGGING</span>
+      <span class="hsticker hsticker--e" data-img="have-a-good-dig">HAVE A<br>GOOD DIG!</span>
+      <span class="hsticker hsticker--f" data-img="someones-trash">SOMEONE'S TRASH<br>SOMEONE'S TREASURE</span>
+      <span class="hsticker hsticker--g" data-img="energy">ENERGY ⚡</span>
     </div>
 
     <!-- Content -->
@@ -179,15 +179,15 @@
         <!-- Visual — sticker collage -->
         <div class="about__visual reveal">
           <div class="about__collage" aria-hidden="true">
-            <span class="sbomb sb-diga">DIG AREA</span>
-            <span class="sbomb sb-gems">HIDDEN GEMS</span>
-            <span class="sbomb sb-vibe">FIND YOUR VIBE</span>
-            <span class="sbomb sb-good">GOOD THINGS<br>TAKE DIGGING</span>
-            <span class="sbomb sb-dig">HAVE A<br>GOOD DIG!</span>
-            <span class="sbomb sb-trash">SOMEONE'S TRASH<br>SOMEONE'S TREASURE</span>
-            <span class="sbomb sb-energy">ENERGY ⚡</span>
-            <span class="sbomb sb-90s">90s</span>
-            <span class="sbomb sb-hore">掘れ</span>
+            <span class="sbomb sb-diga" data-img="dig-area">DIG AREA</span>
+            <span class="sbomb sb-gems" data-img="hidden-gems">HIDDEN GEMS</span>
+            <span class="sbomb sb-vibe" data-img="find-your-vibe">FIND YOUR VIBE</span>
+            <span class="sbomb sb-good" data-img="good-things">GOOD THINGS<br>TAKE DIGGING</span>
+            <span class="sbomb sb-dig" data-img="have-a-good-dig">HAVE A<br>GOOD DIG!</span>
+            <span class="sbomb sb-trash" data-img="someones-trash">SOMEONE'S TRASH<br>SOMEONE'S TREASURE</span>
+            <span class="sbomb sb-energy" data-img="energy">ENERGY ⚡</span>
+            <span class="sbomb sb-90s" data-img="90s">90s</span>
+            <span class="sbomb sb-hore" data-img="hore">掘れ</span>
           </div>
           <div class="tape-stripe"></div>
         </div>
@@ -280,9 +280,9 @@
           <span class="dw-front" style="background:#2BB3AD;color:#0c2b29;">DIG?</span>
           <span class="dw-back">そう、<br>めくれる</span>
         </button>
-        <button class="dw-item dw-rot-b" data-dw="treasure" data-id="t1" type="button" aria-label="めくってみる">
+        <button class="dw-item dw-rot-b" data-dw="treasure" data-id="t1" data-word="DON'T" type="button" aria-label="めくってみる">
           <span class="dw-front" style="background:#FF7BAA;color:#3a0d22;">PEEL ME</span>
-          <span class="dw-back dw-back--treasure">★<br>PASS ①</span>
+          <span class="dw-back dw-back--treasure">暗号①<br>DON'T</span>
         </button>
         <button class="dw-item dw-rot-c" data-dw="press" type="button" aria-label="押す">
           <span class="dw-front" style="background:#FF3C00;color:#fff;">PUSH</span>
@@ -292,9 +292,9 @@
           <span class="dw-front" style="background:#E4FF54;color:#2b3a00;">90s</span>
           <span class="dw-back">お宝は<br>ぜんぶで3つ</span>
         </button>
-        <button class="dw-item dw-rot-a" data-dw="treasure" data-id="t2" type="button" aria-label="めくってみる">
+        <button class="dw-item dw-rot-a" data-dw="treasure" data-id="t2" data-word="STOP" type="button" aria-label="めくってみる">
           <span class="dw-front" style="background:#C9BBA0;color:#2b2317;">？？</span>
-          <span class="dw-back dw-back--treasure">★<br>PASS ②</span>
+          <span class="dw-back dw-back--treasure">暗号②<br>STOP</span>
         </button>
         <button class="dw-item dw-rot-c" data-dw="peel" type="button" aria-label="めくる">
           <span class="dw-front" style="background:#BFE3F0;color:#1B5E6E;">DON'T STOP</span>
@@ -304,9 +304,9 @@
           <span class="dw-front" style="background:#F0C000;color:#3a2e00;">掘れ</span>
           <span class="dw-back">右下の<br>PASSを見て</span>
         </button>
-        <button class="dw-item dw-rot-a" data-dw="treasure" data-id="t3" type="button" aria-label="ポスターの裏を見る">
+        <button class="dw-item dw-rot-a" data-dw="treasure" data-id="t3" data-word="DIGGIN'" type="button" aria-label="ポスターの裏を見る">
           <span class="dw-front" style="background:#1f1c17;color:#6b645b;border:1px dashed rgba(255,255,255,.22);">POSTER</span>
-          <span class="dw-back dw-back--chara">٩(◕‿◕)۶<br>PASS ③!</span>
+          <span class="dw-back dw-back--chara">暗号③<br>DIGGIN'</span>
         </button>
         <button class="dw-item dw-rot-c" data-dw="peel" type="button" aria-label="めくる">
           <span class="dw-front" style="background:#5A3A9A;color:#fff;">VIBE</span>
@@ -792,9 +792,16 @@
 
       <div class="stash-pass__unlocked" id="stash-pass-unlocked" hidden>
         <p class="stash-pass__got">PASS 獲得！</p>
+
+        <p class="stash-pass__secret-label">発掘した暗号</p>
+        <p class="stash-pass__secret" id="stash-pass-secret"><!-- filled by JS --></p>
         <p class="stash-pass__code" id="stash-pass-code">PASS-9223-DIG</p>
+
+        <button type="button" class="stash-pass__copy" id="stash-pass-copy">📋 暗号をコピー</button>
+        <p class="stash-pass__shot">📸 この画面をスクショして保存しておこう</p>
+
         <p class="stash-pass__msg">
-          このパスを会場で見せると、<br><strong>限定ステッカーを1枚プレゼント。</strong>
+          この暗号 ＆ パスを会場で見せると、<br><strong>限定ステッカーを1枚プレゼント。</strong>
         </p>
         <a href="https://instagram.com/stashdig" class="btn btn--yellow btn--sm" target="_blank" rel="noopener">Instagram で受け取り方を見る →</a>
       </div>
