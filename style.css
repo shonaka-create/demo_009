@@ -1129,16 +1129,6 @@ a   { color: inherit; text-decoration: none; }
 .dw-item.just-found { animation: dw-pop .55s ease; }
 @keyframes dw-pop { 0% { transform: scale(1); } 42% { transform: scale(1.13); } 100% { transform: scale(1); } }
 
-.dig-wall__circuit {
-  margin-top: 34px; display: flex; flex-wrap: wrap; gap: 8px 6px; align-items: center; justify-content: center;
-  font-family: var(--ff-sub); font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
-}
-.dig-wall__circuit span {
-  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
-  padding: 6px 12px; border-radius: 50px; color: var(--white);
-}
-.dig-wall__circuit i { color: var(--orange); font-style: normal; padding: 0 2px; }
-
 /* =========================================================
    FOUND TREASURES (EE) — coming
    ========================================================= */
