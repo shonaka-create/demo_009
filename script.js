@@ -261,15 +261,20 @@
     var map = document.getElementById('dig-map');
     if (!map) return;
 
-    // Dig a plot open
+    // Dig a plot open — multi-level for open plots, single toggle for soon/locked
     map.querySelectorAll('.dm-plot').forEach(function (el) {
+      var levels = el.querySelectorAll('.dm-plot__dug[data-dig-level]').length;
       el.addEventListener('click', function () {
-        var dug = el.classList.toggle('dug');
-        if (dug) {
-          el.classList.remove('just-dug');
-          void el.offsetWidth; // reflow to restart animation
-          el.classList.add('just-dug');
+        if (levels > 0) {
+          var cur  = parseInt(el.getAttribute('data-dig') || '0', 10);
+          var next = cur >= levels ? 0 : cur + 1;
+          el.setAttribute('data-dig', next);
+        } else {
+          el.classList.toggle('dug');
         }
+        el.classList.remove('just-dug');
+        void el.offsetWidth;
+        el.classList.add('just-dug');
       });
     });
 

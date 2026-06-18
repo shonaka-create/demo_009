@@ -1087,15 +1087,15 @@ a   { color: inherit; text-decoration: none; }
   padding: 2.2cqw 3cqw; border-radius: 2cqw;
   box-shadow: 0 0 0 3px #fff, 3px 4px 0 rgba(0,0,0,.42);
 }
-.sb-diga   { top: 5cqw;  right: 3cqw;  font-size: 9cqw;  background: linear-gradient(135deg,#C32AA0,#5A3A9A); color:#fff; transform: rotate(6deg); }
-.sb-gems   { top: 3cqw;  left: 4cqw;   font-size: 5.6cqw; background: #BFE3F0; color:#1B5E6E; border-radius: 50px; transform: rotate(-8deg); }
-.sb-vibe   { top: 30cqw; left: -2cqw;  font-size: 6.4cqw; background: #E4FF54; transform: rotate(-4deg); }
-.sb-good   { bottom: 20cqw; left: 4cqw; font-size: 5.4cqw; background: #FF7BAA; transform: rotate(5deg); }
+.sb-gems   { top: 3cqw;  left: 3cqw;   font-size: 5.6cqw; background: #BFE3F0; color:#1B5E6E; border-radius: 50px; transform: rotate(-8deg); }
+.sb-diga   { top: 4cqw;  right: 3cqw;  font-size: 8.5cqw; background: linear-gradient(135deg,#C32AA0,#5A3A9A); color:#fff; transform: rotate(6deg); }
+.sb-vibe   { top: 23cqw; left: -2cqw;  font-size: 6cqw;   background: #E4FF54; transform: rotate(-4deg); }
+.sb-trash  { top: 22cqw; right: -2cqw; font-size: 4.6cqw; background: #C9BBA0; color:#2b2317; transform: rotate(3deg); }
+.sb-90s    { top: 45cqw; left: 4cqw;   font-size: 8cqw;  background: #2BB3AD; color:#06302d; border-radius: 50%; width: 17cqw; height: 17cqw; display:flex; align-items:center; justify-content:center; transform: rotate(-10deg); }
+.sb-hore   { top: 46cqw; left: 31cqw;  font-size: 7cqw; background: #5A3A9A; color:#fff; font-family: var(--ff-round); transform: rotate(6deg); }
+.sb-energy { top: 46cqw; right: 6cqw;  font-size: 5.2cqw; background: #FF3C00; color:#fff; transform: rotate(8deg); }
+.sb-good   { bottom: 5cqw; left: 4cqw; font-size: 5.2cqw; background: #FF7BAA; transform: rotate(5deg); }
 .sb-dig    { bottom: 4cqw; right: 4cqw; font-size: 6.4cqw; background: #F0C000; border-radius: 50%; width: 30cqw; height: 30cqw; display:flex; align-items:center; justify-content:center; transform: rotate(-7deg); }
-.sb-trash  { bottom: 31cqw; right: -3cqw; font-size: 4.8cqw; background: #C9BBA0; color:#2b2317; transform: rotate(3deg); }
-.sb-energy { top: 49cqw; right: 7cqw;  font-size: 5.4cqw; background: #FF3C00; color:#fff; transform: rotate(8deg); }
-.sb-90s    { top: 41cqw; left: 31cqw;  font-size: 8cqw;  background: #2BB3AD; color:#06302d; border-radius: 50%; width: 17cqw; height: 17cqw; display:flex; align-items:center; justify-content:center; transform: rotate(-10deg); }
-.sb-hore   { bottom: 40cqw; left: 33cqw; font-size: 7cqw; background: #5A3A9A; color:#fff; font-family: var(--ff-round); transform: rotate(6deg); }
 
 /* VENDORS — lineup coming (taped-off, intentional) */
 .lineup-coming {
@@ -1273,10 +1273,16 @@ a   { color: inherit; text-decoration: none; }
   color: var(--dm, var(--yellow)); border: 1px solid currentColor; border-radius: 100px; padding: 2px 9px; opacity: .9;
 }
 
-/* dug state — peel the plot open */
+/* dug state — single-layer toggle (soon / locked) */
 .dm-plot.dug .dm-plot__face { transform: rotateX(-90deg) translateY(-12%); opacity: 0; }
 .dm-plot.dug .dm-plot__dug  { opacity: 1; }
 .dm-plot.just-dug { animation: dw-pop .5s ease; }
+
+/* multi-level dig — open plots cycle through data-dig levels */
+.dm-plot[data-dig]:not([data-dig="0"]) .dm-plot__face { transform: rotateX(-90deg) translateY(-12%); opacity: 0; }
+.dm-plot[data-dig="1"] .dm-plot__dug[data-dig-level="1"],
+.dm-plot[data-dig="2"] .dm-plot__dug[data-dig-level="2"],
+.dm-plot[data-dig="3"] .dm-plot__dug[data-dig-level="3"] { opacity: 1; }
 
 /* soon — taped, amber */
 .dm-plot[data-dm="soon"] .dm-plot__face { border-top-color: var(--yellow); }
